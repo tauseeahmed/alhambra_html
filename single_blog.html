@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1"
+        name="viewport" />
+
+    <meta name="csrf-token" content="">
+
+    <!-- Fonts-->
+    <title>Single Blog</title>
+
+    <!-- CSS Library-->
+    <link rel="stylesheet" type="text/css" href="public/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="public/assets/plugins/lightGallery/css/lightgallery.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="public/assets/fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="public/assets/plugins/owl-carousel/assets/owl.carousel.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="public/assets/plugins/owl-carousel/assets/owl.theme.default.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="public/assets/plugins/slick/slick.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="public/assets/plugins/nouislider/nouislider.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="public/assets/plugins/jquery-bar-rating/themes/fontawesome-stars.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="public/assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" type="text/css" href="public/assets/css/user/custom.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/user/style.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/user/main.css">
+    <link rel="stylesheet" type="text/css" href="public/assets/css/user/customer.css">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Viga&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --color-1st: #CA1E24;
+            --color-2nd: #ffffff;
+            --primary-font: 'Viga', sans-serif;
+            --secondary-font: 'Montserrat', sans-serif;
+            --button-text-color: #fff;
+            --header-text-color: #fff;
+            --header-text-hover-color: #fff;
+            --header-text-accent-color: #fff;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="alert-container"></div>
+    <header class="header header--1" data-sticky="true">
+        <div class="header__top">
+            <div class="ps-container">
+                <div class="header__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-menu"></i><span> &ensp;All categories</span></div>
+                        <div class="menu__content" style="">
+                            <ul class="menu--dropdown">
+                                <li>
+                                    <a href="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.1442 3.9858C10.9228 3.93743 10.7042 4.07756 10.6558 4.29886C10.6496 4.32762 10.4982 4.90231 10.2778 5.73654L9.87535 5.57102L8.99488 5.20899C8.68754 5.08321 8.66758 4.81825 8.68836 4.65556C8.71734 4.42997 8.70285 4.19946 8.6282 3.98427C8.47289 3.53665 8.13082 3.15274 7.69195 2.93345C7.55532 2.87739 7.45989 2.84608 7.40236 2.82932C8.00061 2.89946 8.55675 2.49204 8.66356 1.8917L8.75546 1.34748C8.8659 0.724373 8.45173 0.129154 7.82709 0.0178922C7.20373 -0.092932 6.60884 0.322556 6.49804 0.946185L6.40614 1.49041C6.30754 2.04505 6.62577 2.57683 7.13619 2.76547C7.05689 2.7524 6.97877 2.74584 6.90221 2.74584C6.15518 2.74584 5.5569 3.34604 5.42127 4.09225L4.70159 7.32838C6.16289 7.59307 7.44797 7.82609 7.84639 7.89822L7.92377 7.41533L7.66592 7.36721C6.81608 7.20834 6.24295 6.41318 6.36108 5.55678L6.49479 4.58772C6.52569 4.36322 6.73268 4.20654 6.95717 4.23744C7.18166 4.26834 7.33834 4.47533 7.30745 4.69983L7.17373 5.66889C7.11549 6.0908 7.39795 6.48264 7.81659 6.56084C8.2814 6.64449 8.43896 6.71749 9.93045 7.05018C9.66628 8.04897 9.36971 9.16949 9.11323 10.1393C9.00541 9.91887 8.95562 9.85574 8.51888 9.19722C8.3534 8.94768 8.09328 8.77642 7.79862 8.72305L4.52858 8.13067L3.49554 13.069C3.42811 13.5587 3.80958 14 4.30956 14C4.71097 14 5.05358 13.7102 5.11975 13.3145L6.18534 9.26161L7.12952 10.3466C7.55854 10.8396 7.80983 11.4622 7.84319 12.1149L7.90253 13.2847C7.92271 13.6846 8.25348 14 8.65612 14C9.07284 14 9.41081 13.6626 9.41081 13.2464V12.227L10.7503 7.15231C10.9571 7.09002 11.127 6.92424 11.1841 6.70005C11.2399 6.48064 11.1745 6.25711 11.0273 6.10302L11.4572 4.47413C11.5056 4.25284 11.3654 4.03422 11.1442 3.9858Z"
+                                                fill="black" />
+                                            <path
+                                                d="M3.90104 7.15041L4.5242 4.3474L2.96342 4.00943L2.95686 4.04115L2.5519 6.01646C2.45154 6.49744 2.77119 6.96256 3.25326 7.04377L3.90049 7.15287C3.90076 7.15205 3.90076 7.15123 3.90104 7.15041Z"
+                                                fill="black" />
+                                            <path
+                                                d="M5.50555 2.4254L4.89496 2.31001C4.48754 2.2329 4.07328 2.31739 3.72848 2.5479C3.47855 2.71497 3.28551 2.94493 3.16602 3.21372L4.71859 3.55005C4.87664 3.09559 5.15363 2.70786 5.50555 2.4254Z"
+                                                fill="black" />
+                                        </svg>
+
+                                        Action/Adventure
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="ps-logo" href="index.html">
+                        <img src="public/assets/img/user/ALHAMBRA_LOGO.svg" alt="" height="60">
+                    </a>
+                </div>
+
+                <div class="header__center">
+                    <form class="ps-form--quick-search" action="#" method="get">
+                        <div class="form-group--icon">
+                            <div class="product-cat-label">All</div>
+                            <select class="form-control product-category-select" name="categories[]">
+                                <option value="0">All</option>
+
+
+                                <option class="level-0" value="">Category 1</option>
+
+
+
+                            </select>
+                        </div>
+                        <input class="form-control" name="q" type="text" placeholder="" id="input-search">
+                        <div class="spinner-icon">
+                            <i class="fa fa-spin fa-spinner"></i>
+                        </div>
+                        <button type="submit">Search</button>
+                        <div class="ps-panel--search-result"></div>
+                    </form>
+                </div>
+                <div class="header__right">
+                    <div class="header__actions">
+
+
+                        <a class="header__extra btn-wishlist" href="#">
+                            <!-- icon heart-->
+                            <svg width="36" height="33" viewBox="0 0 36 33" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18 32.9972C17.4875 32.9972 16.9934 32.8115 16.6083 32.4742C15.154 31.2026 13.7519 30.0075 12.5148 28.9534L12.5085 28.9479C8.88162 25.8572 5.74969 23.188 3.57056 20.5587C1.13461 17.6194 0 14.8324 0 11.7878C0 8.82974 1.01431 6.10074 2.8559 4.10315C4.71945 2.08194 7.27652 0.96875 10.0569 0.96875C12.1349 0.96875 14.0381 1.62573 15.7132 2.9213C16.5586 3.57526 17.3249 4.37561 18 5.30917C18.6754 4.37561 19.4414 3.57526 20.2871 2.9213C21.9622 1.62573 23.8653 0.96875 25.9434 0.96875C28.7235 0.96875 31.2808 2.08194 33.1444 4.10315C34.986 6.10074 36 8.82974 36 11.7878C36 14.8324 34.8657 17.6194 32.4297 20.5585C30.2506 23.188 27.1189 25.8569 23.4926 28.9474C22.2534 30.0031 20.849 31.2001 19.3914 32.4748C19.0066 32.8115 18.5122 32.9972 18 32.9972ZM10.0569 3.07758C7.87253 3.07758 5.86588 3.94934 4.40607 5.53247C2.92456 7.1395 2.10855 9.36093 2.10855 11.7878C2.10855 14.3484 3.06024 16.6385 5.19406 19.2132C7.25647 21.7019 10.3241 24.3161 13.876 27.3431L13.8826 27.3486C15.1243 28.4068 16.532 29.6065 17.997 30.8875C19.4708 29.6041 20.8806 28.4024 22.1248 27.3425C25.6764 24.3155 28.7438 21.7019 30.8062 19.2132C32.9398 16.6385 33.8914 14.3484 33.8914 11.7878C33.8914 9.36093 33.0754 7.1395 31.5939 5.53247C30.1344 3.94934 28.1275 3.07758 25.9434 3.07758C24.3432 3.07758 22.8741 3.58624 21.5769 4.58929C20.4208 5.48358 19.6155 6.61407 19.1434 7.40509C18.9006 7.81186 18.4732 8.05466 18 8.05466C17.5268 8.05466 17.0994 7.81186 16.8566 7.40509C16.3847 6.61407 15.5794 5.48358 14.4231 4.58929C13.1259 3.58624 11.6568 3.07758 10.0569 3.07758Z"
+                                    fill="white" />
+                            </svg>
+                            <span><i>3</i></span>
+                        </a>
+
+
+
+                        <div class="ps-cart--mini">
+
+                            <a class="header__extra btn-shopping-cart" href="#">
+                                <!-- bag-->
+                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18 20.0475C16.4388 20.0494 14.9252 19.51 13.717 18.5213C12.5089 17.5326 11.6807 16.1557 11.3737 14.625C11.3492 14.4638 11.3601 14.2991 11.4056 14.1425C11.451 13.9859 11.53 13.841 11.637 13.718C11.744 13.5949 11.8765 13.4966 12.0253 13.4298C12.1741 13.363 12.3356 13.3294 12.4987 13.3312C12.7667 13.3274 13.0273 13.4193 13.2336 13.5905C13.4398 13.7617 13.5782 14.0009 13.6237 14.265C13.8356 15.2763 14.389 16.1839 15.191 16.8353C15.9931 17.4867 16.9948 17.8422 18.0281 17.8422C19.0613 17.8422 20.0631 17.4867 20.8651 16.8353C21.6671 16.1839 22.2206 15.2763 22.4325 14.265C22.478 14.0009 22.6163 13.7617 22.8226 13.5905C23.0288 13.4193 23.2894 13.3274 23.5575 13.3312C23.7205 13.3294 23.8821 13.363 24.0308 13.4298C24.1796 13.4966 24.3121 13.5949 24.4191 13.718C24.5261 13.841 24.6051 13.9859 24.6506 14.1425C24.6961 14.2991 24.7069 14.4638 24.6825 14.625C24.3736 16.1652 23.5372 17.5495 22.3174 18.5393C21.0976 19.5291 19.5708 20.0625 18 20.0475Z"
+                                        fill="white" />
+                                    <path
+                                        d="M28.0125 34.875H7.9875C7.52972 34.8756 7.07661 34.783 6.65574 34.603C6.23486 34.4229 5.85502 34.1591 5.53931 33.8276C5.2236 33.4961 4.97863 33.1038 4.8193 32.6747C4.65997 32.2455 4.58961 31.7885 4.6125 31.3313L5.52375 11.9363C5.56146 11.0667 5.93362 10.2454 6.56252 9.64377C7.19141 9.04212 8.02841 8.70669 8.89875 8.70751H27.1012C27.9716 8.70669 28.8086 9.04212 29.4375 9.64377C30.0664 10.2454 30.4385 11.0667 30.4762 11.9363L31.3875 31.3313C31.4104 31.7885 31.34 32.2455 31.1807 32.6747C31.0214 33.1038 30.7764 33.4961 30.4607 33.8276C30.145 34.1591 29.7651 34.4229 29.3443 34.603C28.9234 34.783 28.4703 34.8756 28.0125 34.875ZM8.89875 10.9688C8.60038 10.9688 8.31423 11.0873 8.10325 11.2983C7.89227 11.5092 7.77375 11.7954 7.77375 12.0938L6.8625 31.4438C6.85487 31.5962 6.87832 31.7485 6.93143 31.8916C6.98454 32.0346 7.0662 32.1654 7.17144 32.2759C7.27667 32.3864 7.40329 32.4743 7.54358 32.5343C7.68387 32.5943 7.83491 32.6252 7.9875 32.625H28.0125C28.1651 32.6252 28.3161 32.5943 28.4564 32.5343C28.5967 32.4743 28.7233 32.3864 28.8286 32.2759C28.9338 32.1654 29.0155 32.0346 29.0686 31.8916C29.1217 31.7485 29.1451 31.5962 29.1375 31.4438L28.2262 12.0488C28.2262 11.7504 28.1077 11.4642 27.8967 11.2533C27.6858 11.0423 27.3996 10.9238 27.1012 10.9238L8.89875 10.9688Z"
+                                        fill="white" />
+                                    <path
+                                        d="M24.75 9.84375H22.5V7.875C22.5 6.68153 22.0259 5.53693 21.182 4.69302C20.3381 3.84911 19.1935 3.375 18 3.375C16.8065 3.375 15.6619 3.84911 14.818 4.69302C13.9741 5.53693 13.5 6.68153 13.5 7.875V9.84375H11.25V7.875C11.25 6.08479 11.9612 4.3679 13.227 3.10203C14.4929 1.83616 16.2098 1.125 18 1.125C19.7902 1.125 21.5071 1.83616 22.773 3.10203C24.0388 4.3679 24.75 6.08479 24.75 7.875V9.84375Z"
+                                        fill="white" />
+                                </svg>
+
+                                <span>
+
+                                    <i>3</i></span>
+                            </a>
+
+
+
+
+                            <div class="ps-cart--mobile">
+                                <div class="ps-cart__content">
+                                    <div class="ps-cart__items">
+                                        <div class="ps-cart__items__body">
+                                            <div class="ps-product--cart-mobile">
+                                                <div class="ps-product__thumbnail">
+                                                    <a href="#" alt="" />
+                                                    <img src="public/assets/img/user/add1.svg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="ps-product__content">
+                                                    <a class="ps-product__remove remove-cart-item" href="#"><i
+                                                            class="icon-cross"></i></a>
+                                                    <a href="#">Book1</a>
+                                                    <p class="mb-0"><small><i class="fa fa-rupee"></i> 500</small></p>
+                                                    <p class="mb-0"><small><small>Weight: 200gm</small></small></p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="ps-cart__footer">
+
+                                        <h5>Sub Total:<strong><i class="fa fa-rupee"></i>2000</strong></h5>
+                                        <h5>Tax:<strong><i class="fa fa-rupee"></i>200</strong></h5>
+                                        <h3>Total:<strong><i class="fa fa-rupee"></i>2200</strong></h3>
+
+                                        <figure>
+                                            <a class="ps-btn" href="#">View Cart</a>
+                                            <a href="#" class="ps-btn">Checkout</a>
+                                        </figure>
+                                    </div>
+
+                                    <!-- No products in the cart -->
+                                    <!--  <div class="ps-cart__items ps-cart_no_items">
+                                            <span class="cart-empty-message">No Products in the Cart</span>
+                                        </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ps-block--user-header">
+                            <div class="ps-block__left">
+                                <!-- user -->
+                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.7109 16.6201C25.26 15.0323 26.9602 12.2047 26.9602 8.98682C26.9602 4.03143 22.9287 0 17.9734 0C13.018 0 8.98654 4.03143 8.98654 8.98682C8.98654 12.2047 10.6867 15.032 13.2355 16.6198C7.82034 18.5674 3.9375 23.7544 3.9375 29.8317V34.9113C3.9375 35.5125 4.42502 36 5.02625 36H30.9199C31.5211 36 32.0084 35.5125 32.0084 34.9113V29.8317C32.0084 23.7546 28.1258 18.568 22.7109 16.6201ZM29.8312 33.8225H6.11499V29.8317C6.11499 23.2932 11.4343 17.9739 17.9731 17.9739C24.5116 17.9739 29.8312 23.2932 29.8312 29.8317V33.8225ZM24.7827 8.98682C24.7827 12.7417 21.7282 15.7964 17.9734 15.7964C14.2185 15.7964 11.164 12.7417 11.164 8.98682C11.164 5.23224 14.2185 2.17749 17.9734 2.17749C21.7282 2.17749 24.7827 5.23224 24.7827 8.98682Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="ps-block__right">
+
+
+                                <a href="">Login</a>
+                                <a href="">Register</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="ps-container">
+                <div class="navigation__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle">
+                            <svg width="22" height="12" viewBox="0 0 22 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 1H22M0 6H22M0 11H22" stroke="white" />
+                            </svg>
+
+                            <span> &ensp;&ensp; All categories</span>
+                        </div>
+                        <div class="menu__content" style="">
+                            <ul class="menu--dropdown">
+                                <li>
+                                    <a href="product_category.html">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.1442 3.9858C10.9228 3.93743 10.7042 4.07756 10.6558 4.29886C10.6496 4.32762 10.4982 4.90231 10.2778 5.73654L9.87535 5.57102L8.99488 5.20899C8.68754 5.08321 8.66758 4.81825 8.68836 4.65556C8.71734 4.42997 8.70285 4.19946 8.6282 3.98427C8.47289 3.53665 8.13082 3.15274 7.69195 2.93345C7.55532 2.87739 7.45989 2.84608 7.40236 2.82932C8.00061 2.89946 8.55675 2.49204 8.66356 1.8917L8.75546 1.34748C8.8659 0.724373 8.45173 0.129154 7.82709 0.0178922C7.20373 -0.092932 6.60884 0.322556 6.49804 0.946185L6.40614 1.49041C6.30754 2.04505 6.62577 2.57683 7.13619 2.76547C7.05689 2.7524 6.97877 2.74584 6.90221 2.74584C6.15518 2.74584 5.5569 3.34604 5.42127 4.09225L4.70159 7.32838C6.16289 7.59307 7.44797 7.82609 7.84639 7.89822L7.92377 7.41533L7.66592 7.36721C6.81608 7.20834 6.24295 6.41318 6.36108 5.55678L6.49479 4.58772C6.52569 4.36322 6.73268 4.20654 6.95717 4.23744C7.18166 4.26834 7.33834 4.47533 7.30745 4.69983L7.17373 5.66889C7.11549 6.0908 7.39795 6.48264 7.81659 6.56084C8.2814 6.64449 8.43896 6.71749 9.93045 7.05018C9.66628 8.04897 9.36971 9.16949 9.11323 10.1393C9.00541 9.91887 8.95562 9.85574 8.51888 9.19722C8.3534 8.94768 8.09328 8.77642 7.79862 8.72305L4.52858 8.13067L3.49554 13.069C3.42811 13.5587 3.80958 14 4.30956 14C4.71097 14 5.05358 13.7102 5.11975 13.3145L6.18534 9.26161L7.12952 10.3466C7.55854 10.8396 7.80983 11.4622 7.84319 12.1149L7.90253 13.2847C7.92271 13.6846 8.25348 14 8.65612 14C9.07284 14 9.41081 13.6626 9.41081 13.2464V12.227L10.7503 7.15231C10.9571 7.09002 11.127 6.92424 11.1841 6.70005C11.2399 6.48064 11.1745 6.25711 11.0273 6.10302L11.4572 4.47413C11.5056 4.25284 11.3654 4.03422 11.1442 3.9858Z"
+                                                fill="black" />
+                                            <path
+                                                d="M3.90104 7.15041L4.5242 4.3474L2.96342 4.00943L2.95686 4.04115L2.5519 6.01646C2.45154 6.49744 2.77119 6.96256 3.25326 7.04377L3.90049 7.15287C3.90076 7.15205 3.90076 7.15123 3.90104 7.15041Z"
+                                                fill="black" />
+                                            <path
+                                                d="M5.50555 2.4254L4.89496 2.31001C4.48754 2.2329 4.07328 2.31739 3.72848 2.5479C3.47855 2.71497 3.28551 2.94493 3.16602 3.21372L4.71859 3.55005C4.87664 3.09559 5.15363 2.70786 5.50555 2.4254Z"
+                                                fill="black" />
+                                        </svg>
+
+                                        Action/Adventure
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation__right">
+                    <ul class="menu">
+                        <li class="  ">
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="  ">
+                            <a href="">
+                                best sellers
+                            </a>
+                        </li>
+
+                        <li class="  ">
+                            <a href="#">
+                                Newest eBooks
+                            </a>
+                        </li>
+
+                        <li class="  ">
+                            <a href="#">
+                                Top Picks
+                            </a>
+                        </li>
+
+                        <li class=" ">
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navigation__extra">
+                        <li><a href="">Sell On Alhambra</a></li>
+                        <li>
+                            <div class="ps-dropdown">
+                                <a href=""><span>USD</span></a>
+                                <ul class="ps-dropdown-menu">
+                                    <li><a href="" class="drp-color"><span>EUR</span></a></li>
+                                    <li><a href="" class="drp-color"><span>VND</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ps-dropdown language">
+                                <a href="">
+                                    <span>
+                                        <img src="https://martfury.botble.com/vendor/core/core/base/images/flags/us.svg"
+                                            title="English" width="16" alt="English">
+                                        English
+                                    </span>
+                                </a>
+                                <ul class="ps-dropdown-menu ">
+                                    <li class="">
+                                        <a href="" class="drp-color">
+                                            <img src="https://martfury.botble.com/vendor/core/core/base/images/flags/vn.svg"
+                                                title="Tiếng Việt" width="16" alt="Tiếng Việt"> <span>Tiếng Việt</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <header class="header header--mobile" data-sticky="true">
+        <div class="header__top">
+            <div class="header__left">
+                <p>hello Manoj</p>
+            </div>
+
+            <div class="header__right">
+                <ul class="navigation__extra">
+                    <li><a href="">Track your order</a></li>
+                    <li>
+                        <div class="ps-dropdown"><a href=""><span>India</span></a>
+                            <ul class="ps-dropdown-menu">
+
+                                <li><a href="#"><span>USD</span></a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="navigation--mobile">
+            <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="" alt=""></a></div>
+
+            <div class="navigation__right">
+                <div class="header__actions">
+                    <div class="ps-cart--mini">
+                        <a class="header__extra btn-shopping-cart" href="javascript:void(0)">
+                            <i class="icon-bag2"></i><span><i>8</i></span>
+                        </a>
+                        <div class="ps-cart--mobile">
+                            <div class="ps-cart__content">
+                                <div class="ps-cart__items">
+                                    <div class="ps-cart__items__body">
+                                        <div class="ps-product--cart-mobile">
+                                            <div class="ps-product__thumbnail">
+                                                <a href="#" alt="" />
+                                                <img src="public/assets/img/user/add1.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="ps-product__content">
+                                                <a class="ps-product__remove remove-cart-item" href="#"><i
+                                                        class="icon-cross"></i></a>
+                                                <a href="#">Test1</a>
+                                                <p class="mb-0"><small><i class="fa fa-rupee"></i>2000</small></p>
+                                                <p class="mb-0"><small><small>Weight: 200gm</small></small></p>
+                                                <!--<p class="mb-0"><small>{{ $option['key'] }}: <strong> {{ $option['value'] }}</strong></small></p>-->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="ps-cart__footer">
+
+                                    <h5>Sub Total:<strong><i class="fa fa-rupee"></i>2000</strong></h5>
+                                    <h5>Tax:<strong><i class="fa fa-rupee"></i>200</strong></h5>
+                                    <h3>Total:<strong><i class="fa fa-rupee"></i>2200</strong></h3>
+
+                                    <figure>
+                                        <a class="ps-btn" href="#">View Cart</a>
+                                        <a href="#" class="ps-btn">Checkout</a>
+                                    </figure>
+                                </div>
+
+
+                                <!-- <div class="ps-cart__items ps-cart_no_items">
+                                    <span class="cart-empty-message">No products in the cart</span>
+                                </div> -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ps-block--user-header">
+                        <div class="ps-block__left"><a href="#"><i class="icon-user"></i></a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="ps-search--mobile">
+            <form class="ps-form--search-mobile" action="" method="get">
+                <div class="form-group--nest">
+                    <input class="form-control" name="q" value="" type="text" placeholder="Search something...">
+                    <button type="submit"><i class="icon-magnifier"></i></button>
+                </div>
+            </form>
+        </div>
+
+    </header>
+
+    <!-- breadcrumb -->
+    <div class="ps-breadcrumb">
+        <div class="ps-container">
+            <ul class="breadcrumb">
+                <li><a href="">Home</a></li>
+                <li><a href="">Blog</a></li>
+
+                <li> Lorem Ipsum is simply</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Blog -->
+    <div class="ps-container">
+        <section class="blog_section">
+            <div class="container">
+                <div class="ps-blog--sidebar">
+                    <div class="ps-blog__left">
+                        <div id="app">
+                            <div class="ps-post">
+                                <div class="ps-post__thumbnail"><a href="" class="ps-post__overlay"></a> <img
+                                        src="public/assets/img/user/blog_sample.jpg" alt=""></div>
+                                <div class="ps-post__content">
+                                    <div class="ps-post__top">
+
+                                        <div class="ps-post__meta">
+                                            <div>
+                                                <a href=""><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14.125 1.25H13.375V0H12.125V1.25H3.875V0H2.625V1.25H1.875C0.841125 1.25 0 2.09113 0 3.125V14.125C0 15.1589 0.841125 16 1.875 16H14.125C15.1589 16 16 15.1589 16 14.125V3.125C16 2.09113 15.1589 1.25 14.125 1.25ZM14.75 14.125C14.75 14.4696 14.4696 14.75 14.125 14.75H1.875C1.53038 14.75 1.25 14.4696 1.25 14.125V5.875H14.75V14.125ZM14.75 4.625H1.25V3.125C1.25 2.78038 1.53038 2.5 1.875 2.5H2.625V3.75H3.875V2.5H12.125V3.75H13.375V2.5H14.125C14.4696 2.5 14.75 2.78038 14.75 3.125V4.625Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M3.625 7.1875H2.375V8.4375H3.625V7.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M6.125 7.1875H4.875V8.4375H6.125V7.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M8.625 7.1875H7.375V8.4375H8.625V7.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M11.125 7.1875H9.875V8.4375H11.125V7.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M13.625 7.1875H12.375V8.4375H13.625V7.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M3.625 9.6875H2.375V10.9375H3.625V9.6875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M6.125 9.6875H4.875V10.9375H6.125V9.6875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M8.625 9.6875H7.375V10.9375H8.625V9.6875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M11.125 9.6875H9.875V10.9375H11.125V9.6875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M3.625 12.1875H2.375V13.4375H3.625V12.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M6.125 12.1875H4.875V13.4375H6.125V12.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M8.625 12.1875H7.375V13.4375H8.625V12.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M11.125 12.1875H9.875V13.4375H11.125V12.1875Z"
+                                                            fill="#CA1E24" />
+                                                        <path d="M13.625 9.6875H12.375V10.9375H13.625V9.6875Z"
+                                                            fill="#CA1E24" />
+                                                    </svg>
+                                                    April 4, 2021
+                                                </a> <a href="">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.88623 7.70726C8.94507 7.70726 9.86182 7.3275 10.6111 6.57823C11.3601 5.82909 11.74 4.91247 11.74 3.85351C11.74 2.79492 11.3602 1.87817 10.611 1.12878C9.86169 0.37976 8.94495 0 7.88623 0C6.82727 0 5.91064 0.37976 5.1615 1.1289C4.41235 1.87805 4.03247 2.79479 4.03247 3.85351C4.03247 4.91247 4.41235 5.82921 5.1615 6.57836C5.91089 7.32738 6.82764 7.70726 7.88623 7.70726ZM5.82458 1.79187C6.39941 1.21704 7.07373 0.93762 7.88623 0.93762C8.69861 0.93762 9.37305 1.21704 9.948 1.79187C10.5228 2.36682 10.8024 3.04125 10.8024 3.85351C10.8024 4.66601 10.5228 5.34032 9.948 5.91527C9.37305 6.49022 8.69861 6.76964 7.88623 6.76964C7.07397 6.76964 6.39966 6.4901 5.82458 5.91527C5.24963 5.34044 4.97009 4.66601 4.97009 3.85351C4.97009 3.04125 5.24963 2.36682 5.82458 1.79187Z"
+                                                            fill="#CA1E24" />
+                                                        <path
+                                                            d="M14.629 12.3031C14.6074 11.9913 14.5637 11.6512 14.4994 11.2921C14.4344 10.9303 14.3508 10.5883 14.2507 10.2756C14.1472 9.95251 14.0067 9.63342 13.8328 9.32763C13.6525 9.01025 13.4406 8.73388 13.2028 8.50647C12.9541 8.26855 12.6497 8.07727 12.2976 7.93774C11.9468 7.79895 11.558 7.72864 11.1421 7.72864C10.9788 7.72864 10.8208 7.79565 10.5157 7.99426C10.328 8.1167 10.1084 8.2583 9.86328 8.41492C9.65369 8.54846 9.36975 8.67358 9.01904 8.78686C8.67688 8.89758 8.32947 8.95373 7.98645 8.95373C7.64368 8.95373 7.29626 8.89758 6.95386 8.78686C6.60352 8.6737 6.31946 8.54858 6.11023 8.41504C5.86743 8.25989 5.64771 8.11829 5.45715 7.99414C5.15234 7.79553 4.99438 7.72852 4.83105 7.72852C4.41504 7.72852 4.02637 7.79895 3.67566 7.93787C3.32385 8.07715 3.01929 8.26843 2.77039 8.50659C2.53259 8.73413 2.32068 9.01037 2.1405 9.32763C1.9668 9.63342 1.82617 9.95239 1.72266 10.2758C1.62268 10.5884 1.53906 10.9303 1.47412 11.2921C1.40967 11.6507 1.36609 11.991 1.34448 12.3035C1.32324 12.609 1.3125 12.927 1.3125 13.2483C1.3125 14.0835 1.578 14.7596 2.10156 15.2583C2.61865 15.7503 3.30273 15.9999 4.13489 15.9999H11.839C12.6709 15.9999 13.355 15.7503 13.8722 15.2583C14.3959 14.76 14.6614 14.0836 14.6614 13.2482C14.6613 12.9258 14.6504 12.6078 14.629 12.3031ZM13.2257 14.579C12.884 14.9042 12.4304 15.0622 11.8389 15.0622H4.13489C3.54321 15.0622 3.0896 14.9042 2.74805 14.5791C2.41296 14.2601 2.25012 13.8247 2.25012 13.2483C2.25012 12.9485 2.26001 12.6525 2.27979 12.3683C2.29907 12.0895 2.3385 11.7832 2.39697 11.4578C2.45471 11.1363 2.5282 10.8347 2.6156 10.5616C2.69946 10.2998 2.81384 10.0405 2.95569 9.79077C3.09106 9.55273 3.24683 9.34851 3.4187 9.18396C3.57947 9.03003 3.7821 8.90405 4.02087 8.80957C4.2417 8.72217 4.48987 8.67431 4.75928 8.66711C4.79211 8.68457 4.85059 8.71789 4.94531 8.77966C5.13806 8.90527 5.36023 9.04858 5.60583 9.20544C5.88269 9.38195 6.23938 9.54138 6.66553 9.67895C7.1012 9.81982 7.54553 9.89135 7.98657 9.89135C8.42761 9.89135 8.87207 9.81982 9.3075 9.67907C9.73401 9.54126 10.0906 9.38195 10.3678 9.2052C10.6191 9.04455 10.8351 8.90539 11.0278 8.77966C11.1226 8.71802 11.181 8.68457 11.2139 8.66711C11.4834 8.67431 11.7316 8.72217 11.9525 8.80957C12.1912 8.90405 12.3938 9.03015 12.5546 9.18396C12.7264 9.34839 12.8822 9.55261 13.0176 9.79089C13.1595 10.0405 13.274 10.2999 13.3578 10.5615C13.4453 10.835 13.5189 11.1365 13.5765 11.4576C13.6349 11.7837 13.6744 12.0901 13.6937 12.3684V12.3686C13.7136 12.6517 13.7236 12.9476 13.7238 13.2483C13.7236 13.8248 13.5608 14.2601 13.2257 14.579Z"
+                                                            fill="#CA1E24" />
+                                                    </svg>
+
+                                                    by Blair Dane</a>
+                                            </div>
+                                            <div class="floating_menu">
+                                                <div class="dropdown">
+                                                    <a href="" class="share_icon" id="dropdownMenuButton"
+                                                        data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="20" cy="20" r="19.5" stroke="#CA1E24" />
+                                                            <path
+                                                                d="M24.444 22.6667C23.8331 22.6667 23.2721 22.8743 22.8225 23.2199L18.1832 20.4364C18.2065 20.294 18.2218 20.1488 18.2218 20C18.2218 19.8508 18.2065 19.706 18.1832 19.5634L22.8225 16.7799C23.2721 17.1259 23.8331 17.3333 24.444 17.3333C25.9165 17.3333 27.1107 16.1392 27.1107 14.6667C27.1107 13.1941 25.9165 12 24.444 12C22.9714 12 21.7773 13.1941 21.7773 14.6667C21.7773 14.8155 21.7926 14.9607 21.8163 15.1031L17.177 17.8866C16.7274 17.541 16.1663 17.3333 15.5551 17.3333C14.0826 17.3333 12.8884 18.5275 12.8884 20C12.8884 21.4725 14.0826 22.6667 15.5551 22.6667C16.1663 22.6667 16.7274 22.4592 17.177 22.1132L21.8163 24.8967C21.7926 25.0393 21.7773 25.1842 21.7773 25.3333C21.7773 26.8059 22.9714 28 24.444 28C25.9165 28 27.1107 26.8059 27.1107 25.3333C27.1107 23.8608 25.9165 22.6667 24.444 22.6667Z"
+                                                                fill="#CA1E24" />
+                                                        </svg>
+
+                                                    </a>
+                                                    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+
+                                                        <div class="d-flex">
+                                                            <a class="dropdown-item" href="#"><svg width="20"
+                                                                    height="20" viewBox="0 0 20 20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M14.9992 0.00416134L12.4057 0C9.49197 0 7.60899 1.9319 7.60899 4.92203V7.19141H5.00131C4.77598 7.19141 4.59351 7.37409 4.59351 7.59943V10.8875C4.59351 11.1128 4.77619 11.2953 5.00131 11.2953H7.60899V19.5922C7.60899 19.8175 7.79146 20 8.01679 20H11.4191C11.6444 20 11.8269 19.8173 11.8269 19.5922V11.2953H14.8759C15.1012 11.2953 15.2837 11.1128 15.2837 10.8875L15.2849 7.59943C15.2849 7.49123 15.2418 7.38762 15.1655 7.31105C15.0891 7.23448 14.9851 7.19141 14.8769 7.19141H11.8269V5.26763C11.8269 4.34298 12.0472 3.87358 13.2517 3.87358L14.9988 3.87295C15.2239 3.87295 15.4064 3.69027 15.4064 3.46514V0.411972C15.4064 0.187052 15.2242 0.00457747 14.9992 0.00416134Z"
+                                                                        fill="#CA1E24" />
+                                                                </svg></a>
+                                                            <a class="dropdown-item" href="#"> <svg width="19"
+                                                                    height="15" viewBox="0 0 19 15" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_300_1300)">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M5.55252 14.9994C12.21 14.9994 15.8514 9.22783 15.8514 4.22333C15.8514 4.05904 15.8514 3.89568 15.8408 3.73323C16.5492 3.19788 17.1605 2.53332 17.6466 1.77277C16.9867 2.0792 16.2854 2.28042 15.5683 2.36903C16.3234 1.89553 16.8888 1.15159 17.1596 0.273823C16.4486 0.715017 15.6714 1.02607 14.8608 1.19313C13.49 -0.331664 11.1973 -0.405504 9.73913 1.02884C8.79966 1.95368 8.40005 3.33264 8.69204 4.64791C5.78187 4.49469 3.07019 3.05666 1.23183 0.691018C0.271192 2.42164 0.76254 4.63498 2.35303 5.74628C1.77699 5.72874 1.21331 5.56629 0.709613 5.27278V5.32078C0.710495 7.12339 1.92519 8.67588 3.61359 9.03308C3.08078 9.18537 2.52152 9.20753 1.97988 9.09769C2.45359 10.6409 3.81296 11.6978 5.36109 11.7282C4.07937 12.7823 2.49593 13.3546 0.865749 13.3527C0.578175 13.3518 0.290599 13.3342 0.00390625 13.2982C1.65968 14.4096 3.58537 14.9994 5.55252 14.9965"
+                                                                            fill="#CA1E24" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_300_1300">
+                                                                            <rect width="19" height="15" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg></a>
+                                                            <a class="dropdown-item" href="#"> <svg width="20"
+                                                                    height="20" viewBox="0 0 20 20" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M12.9337 0H8.16398C6.03856 0 4.56729 0.465986 3.24309 1.5599C2.20166 2.45841 1.58014 3.76424 1.58014 5.05314C1.58014 7.03895 3.09417 9.14931 5.89976 9.14931C6.16951 9.14931 6.46819 9.12163 6.73175 9.09705L6.69292 9.19144C6.58014 9.46162 6.47335 9.7165 6.47335 10.1143C6.47335 10.8889 6.847 11.3667 7.20826 11.8283L7.2537 11.8868L7.17294 11.8923C6.01439 11.9717 3.85799 12.1196 2.28283 13.0877C0.422418 14.1938 0.277832 15.8028 0.277832 16.2694C0.277832 18.1259 2.00791 19.9998 5.87332 19.9998C10.3679 19.9998 12.7197 17.5201 12.7197 15.0708C12.7201 13.2591 11.6578 12.3647 10.5302 11.4152L9.57906 10.6753C9.28514 10.4318 8.91913 10.1288 8.91913 9.56737C8.91913 9.01546 9.28514 8.6511 9.60819 8.3297L9.64186 8.29562C10.669 7.48655 11.8332 6.56924 11.8332 4.58508C11.8332 2.59019 10.5866 1.55928 9.98721 1.06375H11.57C11.5894 1.06375 11.6088 1.05838 11.625 1.04785L12.9884 0.190649C13.0272 0.166069 13.0454 0.118769 13.0326 0.074566C13.0204 0.0303634 12.9795 0 12.9337 0ZM7.1496 18.9069C4.4099 18.9069 2.56911 17.6273 2.56911 15.7227C2.56911 14.479 3.32199 13.5753 4.80483 13.0381C5.99229 12.6384 7.52511 12.6186 7.5404 12.6186C7.80003 12.6186 7.93057 12.6186 8.13795 12.6446C10.055 14.0089 10.9766 14.7252 10.9766 16.0895C10.9764 17.8275 9.50987 18.9069 7.1496 18.9069ZM7.12378 8.41831C4.82445 8.41831 3.87018 5.39581 3.87018 3.77746C3.87018 2.95455 4.05732 2.32291 4.44233 1.84597C4.86018 1.32318 5.57568 0.985469 6.26515 0.985469C8.37631 0.985469 9.54374 3.82311 9.54374 5.78434C9.54374 6.09375 9.54374 7.03502 8.89352 7.68876C8.45625 8.12521 7.74509 8.41831 7.12378 8.41831Z"
+                                                                        fill="#CA1E24" />
+                                                                    <path
+                                                                        d="M19.6188 9.34114H17.1055V6.83668C17.1055 6.77967 17.059 6.7334 17.0022 6.7334H15.9211C15.8641 6.7334 15.8179 6.77967 15.8179 6.83668V9.34114H13.3171C13.2601 9.34114 13.2139 9.38741 13.2139 9.44442V10.54C13.2139 10.5968 13.2601 10.6433 13.3171 10.6433H15.8179V13.1638C15.8179 13.2206 15.8641 13.2671 15.9211 13.2671H17.0022C17.059 13.2671 17.1055 13.2206 17.1055 13.1638V10.6428H19.6188C19.6758 10.6428 19.7221 10.5968 19.7221 10.5396V9.44442C19.7221 9.3872 19.676 9.34114 19.6188 9.34114Z"
+                                                                        fill="#CA1E24" />
+                                                                </svg></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+                                        <a href="" class="ps-post__title">Lorem Ipsum is simply</a>
+                                    </div>
+                                    <div class="ps-post__bottom">
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s, when an unknown printer took a galley of type and scrambled it to
+                                            make a type specimen book...
+
+
+                                        </p>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s, when an unknown printer took a galley of type and scrambled it to
+                                            make a type specimen book...
+
+
+                                        </p>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s, when an unknown printer took a galley of type and scrambled it to
+                                            make a type specimen book...
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="post_tags">
+                                <p class="mb-0 pb-0">
+                                    <b>Tags : </b> Lorem, Lorem, Lorem, Lorem, Lorem,
+                                </p>
+                                <div class="floating_menu">
+                                    <div class="dropdown">
+                                        <a href="" class="share_icon" id="dropdownMenuButton" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="20" cy="20" r="19.5" stroke="#CA1E24" />
+                                                <path
+                                                    d="M24.444 22.6667C23.8331 22.6667 23.2721 22.8743 22.8225 23.2199L18.1832 20.4364C18.2065 20.294 18.2218 20.1488 18.2218 20C18.2218 19.8508 18.2065 19.706 18.1832 19.5634L22.8225 16.7799C23.2721 17.1259 23.8331 17.3333 24.444 17.3333C25.9165 17.3333 27.1107 16.1392 27.1107 14.6667C27.1107 13.1941 25.9165 12 24.444 12C22.9714 12 21.7773 13.1941 21.7773 14.6667C21.7773 14.8155 21.7926 14.9607 21.8163 15.1031L17.177 17.8866C16.7274 17.541 16.1663 17.3333 15.5551 17.3333C14.0826 17.3333 12.8884 18.5275 12.8884 20C12.8884 21.4725 14.0826 22.6667 15.5551 22.6667C16.1663 22.6667 16.7274 22.4592 17.177 22.1132L21.8163 24.8967C21.7926 25.0393 21.7773 25.1842 21.7773 25.3333C21.7773 26.8059 22.9714 28 24.444 28C25.9165 28 27.1107 26.8059 27.1107 25.3333C27.1107 23.8608 25.9165 22.6667 24.444 22.6667Z"
+                                                    fill="#CA1E24" />
+                                            </svg>
+
+                                        </a>
+                                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+
+                                            <div class="d-flex">
+                                                <a class="dropdown-item" href="#"><svg width="20" height="20"
+                                                        viewBox="0 0 20 20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M14.9992 0.00416134L12.4057 0C9.49197 0 7.60899 1.9319 7.60899 4.92203V7.19141H5.00131C4.77598 7.19141 4.59351 7.37409 4.59351 7.59943V10.8875C4.59351 11.1128 4.77619 11.2953 5.00131 11.2953H7.60899V19.5922C7.60899 19.8175 7.79146 20 8.01679 20H11.4191C11.6444 20 11.8269 19.8173 11.8269 19.5922V11.2953H14.8759C15.1012 11.2953 15.2837 11.1128 15.2837 10.8875L15.2849 7.59943C15.2849 7.49123 15.2418 7.38762 15.1655 7.31105C15.0891 7.23448 14.9851 7.19141 14.8769 7.19141H11.8269V5.26763C11.8269 4.34298 12.0472 3.87358 13.2517 3.87358L14.9988 3.87295C15.2239 3.87295 15.4064 3.69027 15.4064 3.46514V0.411972C15.4064 0.187052 15.2242 0.00457747 14.9992 0.00416134Z"
+                                                            fill="#CA1E24" />
+                                                    </svg></a>
+                                                <a class="dropdown-item" href="#"> <svg width="19" height="15"
+                                                        viewBox="0 0 19 15" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_300_1300)">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M5.55252 14.9994C12.21 14.9994 15.8514 9.22783 15.8514 4.22333C15.8514 4.05904 15.8514 3.89568 15.8408 3.73323C16.5492 3.19788 17.1605 2.53332 17.6466 1.77277C16.9867 2.0792 16.2854 2.28042 15.5683 2.36903C16.3234 1.89553 16.8888 1.15159 17.1596 0.273823C16.4486 0.715017 15.6714 1.02607 14.8608 1.19313C13.49 -0.331664 11.1973 -0.405504 9.73913 1.02884C8.79966 1.95368 8.40005 3.33264 8.69204 4.64791C5.78187 4.49469 3.07019 3.05666 1.23183 0.691018C0.271192 2.42164 0.76254 4.63498 2.35303 5.74628C1.77699 5.72874 1.21331 5.56629 0.709613 5.27278V5.32078C0.710495 7.12339 1.92519 8.67588 3.61359 9.03308C3.08078 9.18537 2.52152 9.20753 1.97988 9.09769C2.45359 10.6409 3.81296 11.6978 5.36109 11.7282C4.07937 12.7823 2.49593 13.3546 0.865749 13.3527C0.578175 13.3518 0.290599 13.3342 0.00390625 13.2982C1.65968 14.4096 3.58537 14.9994 5.55252 14.9965"
+                                                                fill="#CA1E24" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_300_1300">
+                                                                <rect width="19" height="15" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg></a>
+                                                <a class="dropdown-item" href="#"> <svg width="20" height="20"
+                                                        viewBox="0 0 20 20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.9337 0H8.16398C6.03856 0 4.56729 0.465986 3.24309 1.5599C2.20166 2.45841 1.58014 3.76424 1.58014 5.05314C1.58014 7.03895 3.09417 9.14931 5.89976 9.14931C6.16951 9.14931 6.46819 9.12163 6.73175 9.09705L6.69292 9.19144C6.58014 9.46162 6.47335 9.7165 6.47335 10.1143C6.47335 10.8889 6.847 11.3667 7.20826 11.8283L7.2537 11.8868L7.17294 11.8923C6.01439 11.9717 3.85799 12.1196 2.28283 13.0877C0.422418 14.1938 0.277832 15.8028 0.277832 16.2694C0.277832 18.1259 2.00791 19.9998 5.87332 19.9998C10.3679 19.9998 12.7197 17.5201 12.7197 15.0708C12.7201 13.2591 11.6578 12.3647 10.5302 11.4152L9.57906 10.6753C9.28514 10.4318 8.91913 10.1288 8.91913 9.56737C8.91913 9.01546 9.28514 8.6511 9.60819 8.3297L9.64186 8.29562C10.669 7.48655 11.8332 6.56924 11.8332 4.58508C11.8332 2.59019 10.5866 1.55928 9.98721 1.06375H11.57C11.5894 1.06375 11.6088 1.05838 11.625 1.04785L12.9884 0.190649C13.0272 0.166069 13.0454 0.118769 13.0326 0.074566C13.0204 0.0303634 12.9795 0 12.9337 0ZM7.1496 18.9069C4.4099 18.9069 2.56911 17.6273 2.56911 15.7227C2.56911 14.479 3.32199 13.5753 4.80483 13.0381C5.99229 12.6384 7.52511 12.6186 7.5404 12.6186C7.80003 12.6186 7.93057 12.6186 8.13795 12.6446C10.055 14.0089 10.9766 14.7252 10.9766 16.0895C10.9764 17.8275 9.50987 18.9069 7.1496 18.9069ZM7.12378 8.41831C4.82445 8.41831 3.87018 5.39581 3.87018 3.77746C3.87018 2.95455 4.05732 2.32291 4.44233 1.84597C4.86018 1.32318 5.57568 0.985469 6.26515 0.985469C8.37631 0.985469 9.54374 3.82311 9.54374 5.78434C9.54374 6.09375 9.54374 7.03502 8.89352 7.68876C8.45625 8.12521 7.74509 8.41831 7.12378 8.41831Z"
+                                                            fill="#CA1E24" />
+                                                        <path
+                                                            d="M19.6188 9.34114H17.1055V6.83668C17.1055 6.77967 17.059 6.7334 17.0022 6.7334H15.9211C15.8641 6.7334 15.8179 6.77967 15.8179 6.83668V9.34114H13.3171C13.2601 9.34114 13.2139 9.38741 13.2139 9.44442V10.54C13.2139 10.5968 13.2601 10.6433 13.3171 10.6433H15.8179V13.1638C15.8179 13.2206 15.8641 13.2671 15.9211 13.2671H17.0022C17.059 13.2671 17.1055 13.2206 17.1055 13.1638V10.6428H19.6188C19.6758 10.6428 19.7221 10.5968 19.7221 10.5396V9.44442C19.7221 9.3872 19.676 9.34114 19.6188 9.34114Z"
+                                                            fill="#CA1E24" />
+                                                    </svg></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <!-- action post -->
+                            <div class="post_action">
+                                <div class="post_prev">
+                                    <div class="post_prev_card d-flex align-items-center">
+                                        <!-- path:public\assets\img\user\arrow-point-to-left.svg -->
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_300_2310)">
+                                                <path
+                                                    d="M3.76759 7.20792L10.6474 0.328386C11.085 -0.109461 11.7945 -0.109461 12.232 0.328386C12.6694 0.765844 12.6694 1.47536 12.232 1.91278L6.14444 8.00012L12.2318 14.0872C12.6692 14.5249 12.6692 15.2343 12.2318 15.6718C11.7943 16.1094 11.0848 16.1094 10.6472 15.6718L3.76742 8.79214C3.54869 8.5733 3.43945 8.2868 3.43945 8.00015C3.43945 7.71336 3.5489 7.42665 3.76759 7.20792Z"
+                                                    fill="black" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_300_2310">
+                                                    <rect width="16" height="16" fill="white"
+                                                        transform="translate(16 16) rotate(-180)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <div class="post_prev_img">
+                                            <img src="public/assets/img/user/recent_sample.jpg" alt="">
+
+                                        </div>
+                                        <div class="post_prev_content">
+
+
+                                            <h4>
+                                                Prev Post
+                                            </h4>
+                                            <p>
+                                                Lorem Ipsum is simply dummy
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post_next">
+                                    <div class="post_next_card d-flex align-items-center">
+
+
+                                        <div class="post_next_content">
+
+
+                                            <h4>
+                                                Next Post
+                                            </h4>
+                                            <p>
+                                                Lorem Ipsum is simply dummy
+                                            </p>
+
+                                        </div>
+                                        <div class="post_next_img">
+                                            <img src="public/assets/img/user/recent_sample.jpg" alt="">
+
+                                        </div>
+                                        <!-- path:public\assets\img\user\arrow-point-to-right.svg -->
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_300_2320)">
+                                                <path
+                                                    d="M12.2324 7.20792L5.35265 0.328386C4.91501 -0.109461 4.20546 -0.109461 3.76804 0.328386C3.33058 0.765844 3.33058 1.47536 3.76804 1.91278L9.85556 8.00012L3.76821 14.0872C3.33075 14.5249 3.33075 15.2343 3.76821 15.6718C4.20567 16.1094 4.91519 16.1094 5.35282 15.6718L12.2326 8.79214C12.4513 8.5733 12.5606 8.2868 12.5606 8.00015C12.5606 7.71336 12.4511 7.42665 12.2324 7.20792Z"
+                                                    fill="black" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_300_2320">
+                                                    <rect width="16" height="16" fill="white"
+                                                        transform="matrix(1 0 0 -1 0 16)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ps-blog__right">
+                        <aside class="widget widget--blog widget--search">
+                            <form class="ps-form--quick-search " action="#" method="get">
+
+                                <input class="form-control blog_search" name="q" type="text"
+                                    placeholder="Enter Keywords..." id="input-search">
+                                <div class="spinner-icon">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+                                <button type="submit">
+                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M27.3327 27.105L19.4777 18.9359C21.4812 16.9266 22.7225 14.1565 22.7225 11.1015C22.7225 4.9798 17.7427 0 11.621 0C5.49933 0 0.519531 4.9798 0.519531 11.1015C0.519531 17.2231 5.49933 22.2029 11.621 22.2029C14.3081 22.2029 16.7742 21.2424 18.6963 19.6485L26.5704 27.8377C26.674 27.9461 26.8126 28 26.9516 28C27.0837 28 27.2154 27.9508 27.3179 27.8525C27.5283 27.65 27.5347 27.3154 27.3327 27.105ZM11.621 21.1456C6.08242 21.1456 1.57681 16.64 1.57681 11.1015C1.57681 5.56289 6.08242 1.05728 11.621 1.05728C17.1596 1.05728 21.6652 5.56289 21.6652 11.1015C21.6652 16.64 17.159 21.1456 11.621 21.1456Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </button>
+                                <div class="ps-panel--search-result"></div>
+                            </form>
+
+                        </aside>
+                        <aside class="ps-blog-side">
+                            <div class="blog_categories">
+                                <h3>
+                                    BLOG CATEGORIES
+                                </h3>
+                                <ul>
+                                    <li>Lorem Ipsum </li>
+                                    <li>Lorem Ipsum </li>
+                                    <li>Lorem Ipsum </li>
+                                </ul>
+                            </div>
+                            <div class="recent_post">
+                                <h3>
+                                    Recent Post </h3>
+                                <div class="recent_post_card">
+                                    <div class="recent_img">
+                                        <img src="public/assets/img/user/recent_sample.jpg" alt="">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <span>
+                                            2HRs Ago
+                                        </span>
+                                        <p class="title">
+                                            lorem ipsum
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="recent_post_card">
+                                    <div class="recent_img">
+                                        <img src="public/assets/img/user/recent_sample.jpg" alt="">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <span>
+                                            2HRs Ago
+                                        </span>
+                                        <p class="title">
+                                            lorem ipsum
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="recent_post_card">
+                                    <div class="recent_img">
+                                        <img src="public/assets/img/user/recent_sample.jpg" alt="">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <span>
+                                            2HRs Ago
+                                        </span>
+                                        <p class="title">
+                                            lorem ipsum
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popular_tag">
+                                <h3>
+                                    Popular Tags </h3>
+                                <p>
+                                    Lorem, Lorem, Lorem, Lorem, Lorem,
+                                </p>
+                            </div>
+                        </aside>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- footer -->
+    <!-- news letter -->
+    <div>
+        <div class="ps-newsletter ">
+            <div class="ps-container newsletter-form">
+                <form method="post" action="" class="ps-form--newsletter"><input type="hidden" name="_token" value="">
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="ps-form__left">
+                                <h3>Join Our Newsletter Now</h3>
+                                <p>Subscribe to get information about products and coupons</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="ps-form__right"><input type="hidden" name="_token" value="">
+                                <div class="form-group--nest"><input name="email" type="email"
+                                        placeholder="Email address" class="form-control"> <button type="submit"
+                                        class="ps-btn">Subscribe</button></div>
+                                <div style="margin-top: 10px;"><input type="hidden" name="" id="" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <!-- footer -->
+        <div class="ps-container">
+            <div class="ps-footer__copyright ">
+                <p>Made w/ <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.9687 1.13187C11.2958 0.401985 10.3724 0 9.36845 0C8.61803 0 7.9308 0.237244 7.32579 0.705086C7.02051 0.941238 6.74389 1.23016 6.5 1.56738C6.25621 1.23026 5.97949 0.941238 5.67411 0.705086C5.0692 0.237244 4.38197 0 3.63155 0C2.62763 0 1.70415 0.401985 1.0312 1.13187C0.36628 1.85322 0 2.83869 0 3.90688C0 5.00632 0.409721 6.01272 1.28937 7.07417C2.07628 8.02364 3.20725 8.98749 4.51695 10.1036C4.96416 10.4847 5.47108 10.9168 5.99744 11.377C6.1365 11.4988 6.31493 11.5658 6.5 11.5658C6.68497 11.5658 6.8635 11.4988 7.00236 11.3772C7.52872 10.9169 8.03593 10.4846 8.48335 10.1033C9.79285 8.98739 10.9238 8.02364 11.7107 7.07407C12.5904 6.01272 13 5.00632 13 3.90678C13 2.83869 12.6337 1.85322 11.9687 1.13187Z"
+                            fill="#C1272D" />
+                    </svg>
+                    by Savior © 2022 Alhambra Marketplace. All Rights Reserved.</p>
+                <div class="footer-payments">
+                    <span class="payment-method-title">We Using Safe Payment For: </span>
+                    <p class="d-sm-inline-block d-block">
+                        <span><img src="../public/assets/img/user/payment-method-1.jpg" alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-2.png" alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-3.png" alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-4.png" alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-5.png" alt="payment method"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer end -->
+    <div id="back2top"><i class="icon icon-arrow-up"></i></div>
+    <div class="ps-site-overlay"></div>
+
+    <!--  -->
+    <!-- modal for product quickview -->
+
+
+    <!--script start -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+    <script src="public/assets/plugins/nouislider/nouislider.min.js"></script>
+    <script src="public/assets/plugins/popper.min.js"></script>
+    <script src="public/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="public/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/assets/plugins/jquery.matchHeight-min.js"></script>
+    <script src="public/assets/plugins/slick/slick.min.js"></script>
+    <script src="public/assets/plugins/jquery-bar-rating/jquery.barrating.min.js"></script>
+    <script src="public/assets/plugins/slick-animation.min.js"></script>
+    <script src="public/assets/plugins/lightGallery/js/lightgallery.min.js"></script>
+    <script src="public/assets/plugins/sticky-sidebar/sticky-sidebar.min.js"></script>
+    <script src="public/assets/plugins/select2/js/select2.min.js"></script>
+    <script src="public/assets/js/user/main.js"></script>
+    <script src="public/assets/js/user/backend.js"></script>
+    <script src="public/assets/js/user/parsley.min.js"></script>
+
+
+    <script src="public/assets/js/user/change-product-swatches.js"></script>
+    <script src="public/assets/js/user/cookie-consent.js"></script>
+    <script src="public/assets/js/user/owl.carousel.js"></script>
+    <script src="public/assets/js/user/simple-slider.js"></script>
+
+    <script src="public/assets/js/user/app.js"></script>
+    <script src="public/assets/js/user/customer.js"></script>
+    <script src="public/assets/js/user/avatar.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="public/assets/js/user/card.js"></script>
+
+    <script src="public/assets/js/user/payment.js"></script>
+    <script src="public/assets/js/user/checkout.js"></script>
+    <!-- <script src="public/assets/js/admin/parsley.min.js"></script> -->
+
+    <!-- script end -->
+
+</body>
+
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=1"
+        name="viewport" />
+
+    <meta name="csrf-token" content="">
+    <title>Became Seller</title>
+
+    <!-- Fonts-->
+
+    <!-- CSS Library-->
+    <link rel="stylesheet" type="text/css" href="../public/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/assets/plugins/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../public/assets/plugins/lightGallery/css/lightgallery.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="../public/assets/fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="../public/assets/plugins/owl-carousel/assets/owl.carousel.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="../public/assets/plugins/owl-carousel/assets/owl.theme.default.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="../public/assets/plugins/slick/slick.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="../public/assets/plugins/nouislider/nouislider.min.css">
+
+    <link media="all" type="text/css" rel="stylesheet"
+        href="../public/assets/plugins/jquery-bar-rating/themes/fontawesome-stars.css">
+
+    <link media="all" type="text/css" rel="stylesheet" href="../public/assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/user/custom.css">
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/user/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/user/main.css">
+    <link rel="stylesheet" type="text/css" href="../public/assets/css/user/customer.css">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Viga&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-1st: #CA1E24;
+            --color-2nd: #ffffff;
+            --primary-font: 'Viga', sans-serif;
+            --secondary-font: 'Montserrat', sans-serif;
+            --button-text-color: #fff;
+            --header-text-color: #fff;
+            --header-text-hover-color: #fff;
+            --header-text-accent-color: #fff;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="alert-container"></div>
+    <header class="header header--1" data-sticky="true">
+        <div class="header__top">
+            <div class="ps-container">
+                <div class="header__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle"><i class="icon-menu"></i><span> &ensp;All categories</span></div>
+                        <div class="menu__content" style="">
+                            <ul class="menu--dropdown">
+                                <li>
+                                    <a href="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.1442 3.9858C10.9228 3.93743 10.7042 4.07756 10.6558 4.29886C10.6496 4.32762 10.4982 4.90231 10.2778 5.73654L9.87535 5.57102L8.99488 5.20899C8.68754 5.08321 8.66758 4.81825 8.68836 4.65556C8.71734 4.42997 8.70285 4.19946 8.6282 3.98427C8.47289 3.53665 8.13082 3.15274 7.69195 2.93345C7.55532 2.87739 7.45989 2.84608 7.40236 2.82932C8.00061 2.89946 8.55675 2.49204 8.66356 1.8917L8.75546 1.34748C8.8659 0.724373 8.45173 0.129154 7.82709 0.0178922C7.20373 -0.092932 6.60884 0.322556 6.49804 0.946185L6.40614 1.49041C6.30754 2.04505 6.62577 2.57683 7.13619 2.76547C7.05689 2.7524 6.97877 2.74584 6.90221 2.74584C6.15518 2.74584 5.5569 3.34604 5.42127 4.09225L4.70159 7.32838C6.16289 7.59307 7.44797 7.82609 7.84639 7.89822L7.92377 7.41533L7.66592 7.36721C6.81608 7.20834 6.24295 6.41318 6.36108 5.55678L6.49479 4.58772C6.52569 4.36322 6.73268 4.20654 6.95717 4.23744C7.18166 4.26834 7.33834 4.47533 7.30745 4.69983L7.17373 5.66889C7.11549 6.0908 7.39795 6.48264 7.81659 6.56084C8.2814 6.64449 8.43896 6.71749 9.93045 7.05018C9.66628 8.04897 9.36971 9.16949 9.11323 10.1393C9.00541 9.91887 8.95562 9.85574 8.51888 9.19722C8.3534 8.94768 8.09328 8.77642 7.79862 8.72305L4.52858 8.13067L3.49554 13.069C3.42811 13.5587 3.80958 14 4.30956 14C4.71097 14 5.05358 13.7102 5.11975 13.3145L6.18534 9.26161L7.12952 10.3466C7.55854 10.8396 7.80983 11.4622 7.84319 12.1149L7.90253 13.2847C7.92271 13.6846 8.25348 14 8.65612 14C9.07284 14 9.41081 13.6626 9.41081 13.2464V12.227L10.7503 7.15231C10.9571 7.09002 11.127 6.92424 11.1841 6.70005C11.2399 6.48064 11.1745 6.25711 11.0273 6.10302L11.4572 4.47413C11.5056 4.25284 11.3654 4.03422 11.1442 3.9858Z"
+                                                fill="black" />
+                                            <path
+                                                d="M3.90104 7.15041L4.5242 4.3474L2.96342 4.00943L2.95686 4.04115L2.5519 6.01646C2.45154 6.49744 2.77119 6.96256 3.25326 7.04377L3.90049 7.15287C3.90076 7.15205 3.90076 7.15123 3.90104 7.15041Z"
+                                                fill="black" />
+                                            <path
+                                                d="M5.50555 2.4254L4.89496 2.31001C4.48754 2.2329 4.07328 2.31739 3.72848 2.5479C3.47855 2.71497 3.28551 2.94493 3.16602 3.21372L4.71859 3.55005C4.87664 3.09559 5.15363 2.70786 5.50555 2.4254Z"
+                                                fill="black" />
+                                        </svg>
+
+                                        Action/Adventure
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="ps-logo" href="index.html">
+                        <img src="../public/assets/img/user/ALHAMBRA_LOGO.svg" alt="" height="60">
+                    </a>
+                </div>
+
+                <div class="header__center">
+                    <form class="ps-form--quick-search" action="#" method="get">
+                        <div class="form-group--icon">
+                            <div class="product-cat-label">All</div>
+                            <select class="form-control product-category-select" name="categories[]">
+                                <option value="0">All</option>
+
+
+                                <option class="level-0" value="">Category 1</option>
+
+
+
+                            </select>
+                        </div>
+                        <input class="form-control" name="q" type="text" placeholder="" id="input-search">
+                        <div class="spinner-icon">
+                            <i class="fa fa-spin fa-spinner"></i>
+                        </div>
+                        <button type="submit">Search</button>
+                        <div class="ps-panel--search-result"></div>
+                    </form>
+                </div>
+                <div class="header__right">
+                    <div class="header__actions">
+
+
+                        <a class="header__extra btn-wishlist" href="#">
+                            <!-- icon heart-->
+                            <svg width="36" height="33" viewBox="0 0 36 33" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18 32.9972C17.4875 32.9972 16.9934 32.8115 16.6083 32.4742C15.154 31.2026 13.7519 30.0075 12.5148 28.9534L12.5085 28.9479C8.88162 25.8572 5.74969 23.188 3.57056 20.5587C1.13461 17.6194 0 14.8324 0 11.7878C0 8.82974 1.01431 6.10074 2.8559 4.10315C4.71945 2.08194 7.27652 0.96875 10.0569 0.96875C12.1349 0.96875 14.0381 1.62573 15.7132 2.9213C16.5586 3.57526 17.3249 4.37561 18 5.30917C18.6754 4.37561 19.4414 3.57526 20.2871 2.9213C21.9622 1.62573 23.8653 0.96875 25.9434 0.96875C28.7235 0.96875 31.2808 2.08194 33.1444 4.10315C34.986 6.10074 36 8.82974 36 11.7878C36 14.8324 34.8657 17.6194 32.4297 20.5585C30.2506 23.188 27.1189 25.8569 23.4926 28.9474C22.2534 30.0031 20.849 31.2001 19.3914 32.4748C19.0066 32.8115 18.5122 32.9972 18 32.9972ZM10.0569 3.07758C7.87253 3.07758 5.86588 3.94934 4.40607 5.53247C2.92456 7.1395 2.10855 9.36093 2.10855 11.7878C2.10855 14.3484 3.06024 16.6385 5.19406 19.2132C7.25647 21.7019 10.3241 24.3161 13.876 27.3431L13.8826 27.3486C15.1243 28.4068 16.532 29.6065 17.997 30.8875C19.4708 29.6041 20.8806 28.4024 22.1248 27.3425C25.6764 24.3155 28.7438 21.7019 30.8062 19.2132C32.9398 16.6385 33.8914 14.3484 33.8914 11.7878C33.8914 9.36093 33.0754 7.1395 31.5939 5.53247C30.1344 3.94934 28.1275 3.07758 25.9434 3.07758C24.3432 3.07758 22.8741 3.58624 21.5769 4.58929C20.4208 5.48358 19.6155 6.61407 19.1434 7.40509C18.9006 7.81186 18.4732 8.05466 18 8.05466C17.5268 8.05466 17.0994 7.81186 16.8566 7.40509C16.3847 6.61407 15.5794 5.48358 14.4231 4.58929C13.1259 3.58624 11.6568 3.07758 10.0569 3.07758Z"
+                                    fill="white" />
+                            </svg>
+                            <span><i>3</i></span>
+                        </a>
+
+
+
+                        <div class="ps-cart--mini">
+
+                            <a class="header__extra btn-shopping-cart" href="#">
+                                <!-- bag-->
+                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18 20.0475C16.4388 20.0494 14.9252 19.51 13.717 18.5213C12.5089 17.5326 11.6807 16.1557 11.3737 14.625C11.3492 14.4638 11.3601 14.2991 11.4056 14.1425C11.451 13.9859 11.53 13.841 11.637 13.718C11.744 13.5949 11.8765 13.4966 12.0253 13.4298C12.1741 13.363 12.3356 13.3294 12.4987 13.3312C12.7667 13.3274 13.0273 13.4193 13.2336 13.5905C13.4398 13.7617 13.5782 14.0009 13.6237 14.265C13.8356 15.2763 14.389 16.1839 15.191 16.8353C15.9931 17.4867 16.9948 17.8422 18.0281 17.8422C19.0613 17.8422 20.0631 17.4867 20.8651 16.8353C21.6671 16.1839 22.2206 15.2763 22.4325 14.265C22.478 14.0009 22.6163 13.7617 22.8226 13.5905C23.0288 13.4193 23.2894 13.3274 23.5575 13.3312C23.7205 13.3294 23.8821 13.363 24.0308 13.4298C24.1796 13.4966 24.3121 13.5949 24.4191 13.718C24.5261 13.841 24.6051 13.9859 24.6506 14.1425C24.6961 14.2991 24.7069 14.4638 24.6825 14.625C24.3736 16.1652 23.5372 17.5495 22.3174 18.5393C21.0976 19.5291 19.5708 20.0625 18 20.0475Z"
+                                        fill="white" />
+                                    <path
+                                        d="M28.0125 34.875H7.9875C7.52972 34.8756 7.07661 34.783 6.65574 34.603C6.23486 34.4229 5.85502 34.1591 5.53931 33.8276C5.2236 33.4961 4.97863 33.1038 4.8193 32.6747C4.65997 32.2455 4.58961 31.7885 4.6125 31.3313L5.52375 11.9363C5.56146 11.0667 5.93362 10.2454 6.56252 9.64377C7.19141 9.04212 8.02841 8.70669 8.89875 8.70751H27.1012C27.9716 8.70669 28.8086 9.04212 29.4375 9.64377C30.0664 10.2454 30.4385 11.0667 30.4762 11.9363L31.3875 31.3313C31.4104 31.7885 31.34 32.2455 31.1807 32.6747C31.0214 33.1038 30.7764 33.4961 30.4607 33.8276C30.145 34.1591 29.7651 34.4229 29.3443 34.603C28.9234 34.783 28.4703 34.8756 28.0125 34.875ZM8.89875 10.9688C8.60038 10.9688 8.31423 11.0873 8.10325 11.2983C7.89227 11.5092 7.77375 11.7954 7.77375 12.0938L6.8625 31.4438C6.85487 31.5962 6.87832 31.7485 6.93143 31.8916C6.98454 32.0346 7.0662 32.1654 7.17144 32.2759C7.27667 32.3864 7.40329 32.4743 7.54358 32.5343C7.68387 32.5943 7.83491 32.6252 7.9875 32.625H28.0125C28.1651 32.6252 28.3161 32.5943 28.4564 32.5343C28.5967 32.4743 28.7233 32.3864 28.8286 32.2759C28.9338 32.1654 29.0155 32.0346 29.0686 31.8916C29.1217 31.7485 29.1451 31.5962 29.1375 31.4438L28.2262 12.0488C28.2262 11.7504 28.1077 11.4642 27.8967 11.2533C27.6858 11.0423 27.3996 10.9238 27.1012 10.9238L8.89875 10.9688Z"
+                                        fill="white" />
+                                    <path
+                                        d="M24.75 9.84375H22.5V7.875C22.5 6.68153 22.0259 5.53693 21.182 4.69302C20.3381 3.84911 19.1935 3.375 18 3.375C16.8065 3.375 15.6619 3.84911 14.818 4.69302C13.9741 5.53693 13.5 6.68153 13.5 7.875V9.84375H11.25V7.875C11.25 6.08479 11.9612 4.3679 13.227 3.10203C14.4929 1.83616 16.2098 1.125 18 1.125C19.7902 1.125 21.5071 1.83616 22.773 3.10203C24.0388 4.3679 24.75 6.08479 24.75 7.875V9.84375Z"
+                                        fill="white" />
+                                </svg>
+
+                                <span>
+
+                                    <i>3</i></span>
+                            </a>
+
+
+
+
+                            <div class="ps-cart--mobile">
+                                <div class="ps-cart__content">
+                                    <div class="ps-cart__items">
+                                        <div class="ps-cart__items__body">
+                                            <div class="ps-product--cart-mobile">
+                                                <div class="ps-product__thumbnail">
+                                                    <a href="#" alt="" />
+                                                    <img src="public/assets/img/user/add1.svg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="ps-product__content">
+                                                    <a class="ps-product__remove remove-cart-item" href="#"><i
+                                                            class="icon-cross"></i></a>
+                                                    <a href="#">Book1</a>
+                                                    <p class="mb-0"><small><i class="fa fa-rupee"></i> 500</small></p>
+                                                    <p class="mb-0"><small><small>Weight: 200gm</small></small></p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="ps-cart__footer">
+
+                                        <h5>Sub Total:<strong><i class="fa fa-rupee"></i>2000</strong></h5>
+                                        <h5>Tax:<strong><i class="fa fa-rupee"></i>200</strong></h5>
+                                        <h3>Total:<strong><i class="fa fa-rupee"></i>2200</strong></h3>
+
+                                        <figure>
+                                            <a class="ps-btn" href="#">View Cart</a>
+                                            <a href="#" class="ps-btn">Checkout</a>
+                                        </figure>
+                                    </div>
+
+                                    <!-- No products in the cart -->
+                                    <!--  <div class="ps-cart__items ps-cart_no_items">
+                                            <span class="cart-empty-message">No Products in the Cart</span>
+                                        </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ps-block--user-header">
+                            <div class="ps-block__left">
+                                <!-- user -->
+                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.7109 16.6201C25.26 15.0323 26.9602 12.2047 26.9602 8.98682C26.9602 4.03143 22.9287 0 17.9734 0C13.018 0 8.98654 4.03143 8.98654 8.98682C8.98654 12.2047 10.6867 15.032 13.2355 16.6198C7.82034 18.5674 3.9375 23.7544 3.9375 29.8317V34.9113C3.9375 35.5125 4.42502 36 5.02625 36H30.9199C31.5211 36 32.0084 35.5125 32.0084 34.9113V29.8317C32.0084 23.7546 28.1258 18.568 22.7109 16.6201ZM29.8312 33.8225H6.11499V29.8317C6.11499 23.2932 11.4343 17.9739 17.9731 17.9739C24.5116 17.9739 29.8312 23.2932 29.8312 29.8317V33.8225ZM24.7827 8.98682C24.7827 12.7417 21.7282 15.7964 17.9734 15.7964C14.2185 15.7964 11.164 12.7417 11.164 8.98682C11.164 5.23224 14.2185 2.17749 17.9734 2.17749C21.7282 2.17749 24.7827 5.23224 24.7827 8.98682Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                            <div class="ps-block__right">
+
+
+                                <a href="login.html">Login</a>
+                                <a href="register.html" class="">Register</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="ps-container">
+                <div class="navigation__left">
+                    <div class="menu--product-categories">
+                        <div class="menu__toggle">
+                            <svg width="22" height="12" viewBox="0 0 22 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 1H22M0 6H22M0 11H22" stroke="white" />
+                            </svg>
+
+                            <span> &ensp;&ensp; All categories</span>
+                        </div>
+                        <div class="menu__content" style="">
+                            <ul class="menu--dropdown">
+                                <li>
+                                    <a href="product_category.html">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.1442 3.9858C10.9228 3.93743 10.7042 4.07756 10.6558 4.29886C10.6496 4.32762 10.4982 4.90231 10.2778 5.73654L9.87535 5.57102L8.99488 5.20899C8.68754 5.08321 8.66758 4.81825 8.68836 4.65556C8.71734 4.42997 8.70285 4.19946 8.6282 3.98427C8.47289 3.53665 8.13082 3.15274 7.69195 2.93345C7.55532 2.87739 7.45989 2.84608 7.40236 2.82932C8.00061 2.89946 8.55675 2.49204 8.66356 1.8917L8.75546 1.34748C8.8659 0.724373 8.45173 0.129154 7.82709 0.0178922C7.20373 -0.092932 6.60884 0.322556 6.49804 0.946185L6.40614 1.49041C6.30754 2.04505 6.62577 2.57683 7.13619 2.76547C7.05689 2.7524 6.97877 2.74584 6.90221 2.74584C6.15518 2.74584 5.5569 3.34604 5.42127 4.09225L4.70159 7.32838C6.16289 7.59307 7.44797 7.82609 7.84639 7.89822L7.92377 7.41533L7.66592 7.36721C6.81608 7.20834 6.24295 6.41318 6.36108 5.55678L6.49479 4.58772C6.52569 4.36322 6.73268 4.20654 6.95717 4.23744C7.18166 4.26834 7.33834 4.47533 7.30745 4.69983L7.17373 5.66889C7.11549 6.0908 7.39795 6.48264 7.81659 6.56084C8.2814 6.64449 8.43896 6.71749 9.93045 7.05018C9.66628 8.04897 9.36971 9.16949 9.11323 10.1393C9.00541 9.91887 8.95562 9.85574 8.51888 9.19722C8.3534 8.94768 8.09328 8.77642 7.79862 8.72305L4.52858 8.13067L3.49554 13.069C3.42811 13.5587 3.80958 14 4.30956 14C4.71097 14 5.05358 13.7102 5.11975 13.3145L6.18534 9.26161L7.12952 10.3466C7.55854 10.8396 7.80983 11.4622 7.84319 12.1149L7.90253 13.2847C7.92271 13.6846 8.25348 14 8.65612 14C9.07284 14 9.41081 13.6626 9.41081 13.2464V12.227L10.7503 7.15231C10.9571 7.09002 11.127 6.92424 11.1841 6.70005C11.2399 6.48064 11.1745 6.25711 11.0273 6.10302L11.4572 4.47413C11.5056 4.25284 11.3654 4.03422 11.1442 3.9858Z"
+                                                fill="black" />
+                                            <path
+                                                d="M3.90104 7.15041L4.5242 4.3474L2.96342 4.00943L2.95686 4.04115L2.5519 6.01646C2.45154 6.49744 2.77119 6.96256 3.25326 7.04377L3.90049 7.15287C3.90076 7.15205 3.90076 7.15123 3.90104 7.15041Z"
+                                                fill="black" />
+                                            <path
+                                                d="M5.50555 2.4254L4.89496 2.31001C4.48754 2.2329 4.07328 2.31739 3.72848 2.5479C3.47855 2.71497 3.28551 2.94493 3.16602 3.21372L4.71859 3.55005C4.87664 3.09559 5.15363 2.70786 5.50555 2.4254Z"
+                                                fill="black" />
+                                        </svg>
+
+                                        Action/Adventure
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation__right">
+                    <ul class="menu">
+                        <li class="  ">
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="  ">
+                            <a href="">
+                                best sellers
+                            </a>
+                        </li>
+
+                        <li class="  ">
+                            <a href="#">
+                                Newest eBooks
+                            </a>
+                        </li>
+
+                        <li class="  ">
+                            <a href="#">
+                                Top Picks
+                            </a>
+                        </li>
+
+                        <li class=" ">
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navigation__extra">
+                        <li><a href="">Sell On Alhambra</a></li>
+                        <li>
+                            <div class="ps-dropdown">
+                                <a href=""><span>USD</span></a>
+                                <ul class="ps-dropdown-menu">
+                                    <li><a href="" class="drp-color"><span>EUR</span></a></li>
+                                    <li><a href="" class="drp-color"><span>VND</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ps-dropdown language">
+                                <a href="">
+                                    <span>
+                                        <img src="https://martfury.botble.com/vendor/core/core/base/images/flags/us.svg"
+                                            title="English" width="16" alt="English">
+                                        English
+                                    </span>
+                                </a>
+                                <ul class="ps-dropdown-menu ">
+                                    <li class="">
+                                        <a href="" class="drp-color">
+                                            <img src="https://martfury.botble.com/vendor/core/core/base/images/flags/vn.svg"
+                                                title="Tiếng Việt" width="16" alt="Tiếng Việt"> <span>Tiếng Việt</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <header class="header header--mobile" data-sticky="true">
+        <div class="header__top">
+            <div class="header__left">
+                <p>hello Manoj</p>
+            </div>
+
+            <div class="header__right">
+                <ul class="navigation__extra">
+                    <li><a href="">Track your order</a></li>
+                    <li>
+                        <div class="ps-dropdown"><a href=""><span>India</span></a>
+                            <ul class="ps-dropdown-menu">
+
+                                <li><a href="#"><span>USD</span></a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="navigation--mobile">
+            <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="" alt=""></a></div>
+
+            <div class="navigation__right">
+                <div class="header__actions">
+                    <div class="ps-cart--mini">
+                        <a class="header__extra btn-shopping-cart" href="javascript:void(0)">
+                            <i class="icon-bag2"></i><span><i>8</i></span>
+                        </a>
+                        <div class="ps-cart--mobile">
+                            <div class="ps-cart__content">
+                                <div class="ps-cart__items">
+                                    <div class="ps-cart__items__body">
+                                        <div class="ps-product--cart-mobile">
+                                            <div class="ps-product__thumbnail">
+                                                <a href="#" alt="" >
+                                                <img src="public/assets/img/user/add1.svg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="ps-product__content">
+                                                <a class="ps-product__remove remove-cart-item" href="#"><i
+                                                        class="icon-cross"></i></a>
+                                                <a href="#">Test1</a>
+                                                <p class="mb-0"><small><i class="fa fa-rupee"></i>2000</small></p>
+                                                <p class="mb-0"><small><small>Weight: 200gm</small></small></p>
+                                                <!--<p class="mb-0"><small>{{ $option['key'] }}: <strong> {{ $option['value'] }}</strong></small></p>-->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="ps-cart__footer">
+
+                                    <h5>Sub Total:<strong><i class="fa fa-rupee"></i>2000</strong></h5>
+                                    <h5>Tax:<strong><i class="fa fa-rupee"></i>200</strong></h5>
+                                    <h3>Total:<strong><i class="fa fa-rupee"></i>2200</strong></h3>
+
+                                    <figure>
+                                        <a class="ps-btn" href="#">View Cart</a>
+                                        <a href="#" class="ps-btn">Checkout</a>
+                                    </figure>
+                                </div>
+
+
+                                <!-- <div class="ps-cart__items ps-cart_no_items">
+                                    <span class="cart-empty-message">No products in the cart</span>
+                                </div> -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="ps-block--user-header">
+                        <div class="ps-block__left"><a href="#"><i class="icon-user"></i></a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="ps-search--mobile">
+            <form class="ps-form--search-mobile" action="" method="get">
+                <div class="form-group--nest">
+                    <input class="form-control" name="q" value="" type="text" placeholder="Search something...">
+                    <button type="submit"><i class="icon-magnifier"></i></button>
+                </div>
+            </form>
+        </div>
+
+    </header>
+
+    <!-- breadcrumb -->
+    <div class="ps-breadcrumb">
+        <div class="ps-container">
+            <ul class="breadcrumb">
+                <li><a href="">Home</a></li>
+
+                <li>Become a seller</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="ps-container">
+        <div class="mt-40 mb-40">
+            <section class="ps-section--account crop-avatar customer-page">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="ps-section__left">
+                                <aside class="ps-widget--account-dashboard">
+                                    <div class="ps-widget__header">
+                                        <form id="avatar-upload-form" >
+                                            <div class="avatar-upload-container">
+                                                <div id="account-avatar">
+                                                    <div class="profile-image">
+                                                        <div class="avatar-view mt-card-avatar">
+                                                            <img class="br2"
+                                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACBFBMVEUAAAD////+/v7+8vH95+b94d/93tz93dr93dr93dv93tz939394N794N796Ob////////++vn95eP93dv939z95+b+9/b////95+X93dr94+H++Pj////93dv////+9fX95+X+9fT////94+L94N7////94N395uT////94d/96+r97Or////96ef94N7+8/L9393++fn9393+8fD93tz96+r////93dr97ev+9PP97ev93dr+9/f97ez+9/b939z939z94d/94uD+/v7+7u393dv+9PP94N7+9/f94N394+H////++fn95+b939z++fj95uT96+r9393////97Or82df7y8f7v7v6t7L6saz6rqj6rKf94uD4lY73enH2Zlz1WEz0TUH0Qzb0Rjn829j5pJ31XlL0TD/0Sz/1XVL5o535pqD2dGr1VEj0RTj5pp/96+r96un5nJX2aF30Sj76uLP1Y1j1YVb0RDf7wLv2a2H++fj4iID++Pj7xsL2Z131Vkr4lI30TUD4jYX0ST34kIj0STz5nZb0U0f94d/3gHf3gHj6sq30SDv0SDz2amD0Sz73fnX97ev1Wk797ez0Rzr3hn36qaP4lIz3hXz2cWf5qaP0UUX1VUr0TkH1YFb4iYH96+n0Qzf6raj6sav1V0z4lY31YFX7xcL3hX396uj6raeOHF/LAAAAU3RSTlMABhMiNUpfcoOSnaWqqzUBBRg8bKDQ9g42d774AmgEHs8eCEGsC1TLB0stLAzWT+9X+Vbsn90DhSvwKoQb4xtbWky6EeVm8VD2U78PGNGh+MosVFZd1rAAAAABYktHRAH/Ai3eAAALZElEQVR42uWd+19TRxqHJ01BVNiUBBFIkAhRxHJZ5NaIFAtYra1ru18uCUIgWZDVhIsgiEijgIBWFFxAxO7a3W632939JzcRFCJJOCeZMzPHeX7kA2GeT+bMmcv7vkMIawwfGT9OST2QdvDQ4fSM9MOHDqYdSE35nfEjE/OWMOOTTLMl60g23tDa1t7hcnde63S7OtrbWrd+mH0ky2LONPBuKE1MR3Ny86whty5Xt6en1+uLwp+8vT2ebldX6Lesebk5R3m3mQI2Y35eSKev33N9wKeEP9/w3OwL/UVevvEY78YnQYHFHurb/sCgIuldDA0GhkcAu+W4jbdDAhQWZQC3Rsduq9V+x+2x0VuAo6iQt4oqTpwsBsYD3oS13+INjAPFJ0/wFlLIqZKQ982JoaS9tzv/RH/IvuQUb619MZ12AP47k5S8t7njBzI+5e0Wl1JLNu5O0fq+I777qQ5kW0p5C8bCmI5708k/37HwTn+PdCNvySiYzGUI3tfMe4uxIMrMgs14beUVGH6gsXiYB35UlAv0srf9vhIzswzEw8zOoPKMIPKmcivmHjISD/NwDtZyEbq9uQrzCwzFwyzMo8rMW9xox6KydQldBhZh5zral1bD9YiDeJhHLlRze8+bUtE1wUk8zMRjpPJ55I01+IGjeJgnqOHQ62vrsKTdzE0p3iXU1TI2/8yJKd7eb5iC8yxLcVsa/E95S2/zzI96djOccw1Y5m28i2U0fM7IvBGuFd66Eay4cJ6FuCEDz3m77uE5HNrv3xc4/7LKWzQKq2vO4xqbfwH3Om/NqKy7UaKluCkNL3g7xuQF6rWb2xmaMMZbMA5jaNLqgW9uaVV9jsKUwZGWZk3MjQiyXperZSEILeb0OdigvLuuAZMbyKFunoIZ3l6KeIkUyubnsclbSiGbaKRqfgEe3kqK8eACRXMLAryFVBCAhaL5K946qnhFzf2CzszD7nT6/Hld9fYtAlTGuhQdjXA7eCi843J081aLZDPpuY1RJzOZvbxMck7bjB95KyTMBpJZyxhaguLP22MxGWxJfA1ramoVfa0Wj4WRpoT3Luoh9vp8PwZRn6B5CbSOjdGasQT36woE3odTygsksk9rcLp5N5wCbmcCQ51jTcxdZ3WsrzlUmzdCxJMG9ayqPpM6J+DpUmI8h7qzSFuDi3eTqeFqUHUGXQ+xzlKTYUXV2/0zoc7Pk2UZyuMuar/0824uVfxOxfE2dRAlWoQOz1Cn0NwoSIQQPaYUrt1NNUu8m0qdpRpFa7hU8I+Ho40XqQrMS/GEd0M14AkUxNNWd/FupiY8rlYwxvGM+NWOif1HOvuHM4ONxGXfx9wMXvHtWvMI8fMmTFWLvJuoGYtVcV9wF8Ejm4MNAyiPY26zzvNuoIbMW+OsXs9Az/vu+7GAM7G/9Mo53s3TlLnKmF97OVhm6rHnYcyn3VTxknfjNGamIsYgb8Ys77ZpzGysd3vZMI2P/6tGUHH3l0U1N+JvFD78GTSCivqD6DP59CCNDxdb3RdMj2JeSifWXXD1sWjrdss9Kp8tuLrv+73RhKZL01KoT1/a8347jddSqHuxp76No4POR4uu7uvIeM/8FK29d+HVp/BeTacSUKohJLz60PvxNcVUZnJ6UPf5iyPMT+AnadR/QkQNt69AKypSfPVJnIzo7zdpfbD46r7+3T2+kN65gw7UJ7CrZmMRrfFdF+pDKNpRzxin9rk6UPeN78TS2Shmt+hBPYB325MFFE/U9aD+eidy1nKL4ufux9+jiv2DYQt8vlvvVq72UcnUR+3b5seY1iIQQX0Mx97uRyZe3Vif6rff7k7mt7L8tyKo+0byt9TzmMZGCqE+fHlrV45tzqoQ6gG82aH7mm1ekxDqg3hz70AOvQm8btSHtjJec/uY/lch1H19uW9GuX4J1W/mhdWtbPPTxVD3WEPmBlyXUP0GDIR8wzheTAz1AWSGYyl+llD953B8hYVxJLQY6r6u0Lo1i3E8sCDqrixCrnRLqd59hJBLjGuvCKLuuURs6JFSvQekEL1SqveCfMQ6v0kQdS+IEYwz9AVRXwf5mNoZq77UJ0FSaO7t60jdB5I6Iql6KznQJql6G6lvl1S9nRykFC+nO/UOcoh1NqMo6i5ymHXNIVHU3SS9U1L1TuK4Jqn6NXm/9X/K+6z/IvMIL/F7XeLZnMRzeGlXbiMyr9cl3qWReG9O4h3ZQvxLSvVeyHz6IvGZG7nyq5Tqv16R93z9D4RYHkup/tgidSxNpqQRVN+E4+ZuSKh+PRw3R65KGS15NRwoeplaPquO1PsvSx4ZLXE8vJxZEF9LnvtCLsuX8eS/vJ3nxnRnUgj11nzpsxslzmmVOJNZ5vz145SqjulF3btTtYBmrQo9qO+qVUEc9CqU6EF9fFfdNYp1aXSgHlGXhmI1Ih2oR1QjIsXs8lr5q/d/q03lMfHVJ/GVNvXmxFf/d2S9OfIts9Ubd/XhyCqD9GpLCq++p7YktYqiwqvvqShKMljFz/FW79hze+mnrKIrOKu/xnfvq9OqGS26epSa0bQqhYuufm9vpXBa9eEFV49aH57SrQCCq0e9FYAY8eCDV49xFwQpYzKj46oe4wYQRve+8FSPee8Lm9t+eKq/jHXbD5s7njiqx77jic3NXhzV49zsxeQ+N37q8e5zI7ar2t/ix099/mq8O+jLP+i7Gy/GMZf5xk6J72mV+XZeme9k/lBv4u7a/yZume9fJ6msc6AY4EWqAnNiqlni3VLqLNWYlKiHRjpWe/KsmFIwxm1Rh2e8G0uVZ6hTaE5qnUzjJzXH76xVqk7OYpl3cymyjLOKzQmpxwrvBlNjBfUqzImt4cOZz7oabGrUyTk8591kSjzHOVXmhJzHKu9GU2EVjSrNCXGsMc7p14T1NYdqc2Jw/sK73RRwOw3q1clxvODd8KR5gYIEzMPxNSzj5LXg/vtxM4qpZ5sLRZ1BdW/03ZiaRrTfl9eOhZEmZeu1aBhagoyr1lBkMtiSyBD3lmZs8DZImB/RnIR5eO0+w1shQWYUr9FjkYNN3hIJsbmVtZoUKWBcvYUKHqQkbU5II9ucVyoEEpi5R+MCXvFWUckrXKBiTohFZ+6vYEle+p27nvp8gKJ5uM/rZ6zzUOvtWzTq5h23SWmE2yEFLCLLkucllbdaJDnYEH8+P7lBYSazFyOCoq/jFn5LevYaneaWVrHX74OtLcmtWGJjaBJ632YMTcmsUuNjShN4v+4/SEt8Z0IBJXCLuUe97k54H04px51rIp5NrK59mdjeqxoMGQKeST1HhnaP+S4a4RLrHHbFRX0GF4vPG4Q6f19Gg9oTxcSxpWH4KW/jbZ4OI03dKXKSnHUKEms0BaeamAka1NZhiWE1mxi8XkKd8jgZahhruMdV/oAabebs+2FKRRfPWOKJLqRqOn+LR2k1XLzi5x+5UK0k7lUzjHYs8sgZGViEnU9f34W5CvOs1/EL86jaL6eBBaZyK+YY5Aa+4+EcrOXcHvJIbGcqMTPLSHx2BpVnmM5h9pG/WAE/ixzwB35UXBRIPIzJXIag1ns4939DmVmQrh6BMR33prXLoPBO30M691E9FqWWbHRMaVHXaGjqLrItXN/j+2H6LgPw36G7Yz95xw84TovY0yM5VVIM9E/Q+u6HJvqB4i9OJd8wJpz4Y8h+PJD8c+8NjIe8T55IvkkMKSxyAP8dvZ94Tebb90dvhfp5UWHyjWGOrcBiB0aGA4NqO//kYMDfCtgtBYK9wtVwzJifB6Cv33Nd2Spn4Lqnvy/0F3n5xmPJ/3vuHM3JzbOGdLpc3Z6eXm/UPvC6t8fT7eoK/ZY1LzfnKO8mU8WUabZkHcneqs/Q2tZ+1+Xu/F+n23W3va1164fZR7Is5kxm+03/B16kEKk18tC8AAAAAElFTkSuQmCC"
+                                                                alt="">
+                                                            <div class="mt-overlay br2">
+                                                                <span><i class="fa fa-edit"></i></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <figure>
+                                            <figcaption>Hello</figcaption>
+                                            <p>
+                                                Leone Hand</p>
+                                        </figure>
+                                    </div>
+                                    <div class="ps-widget__content">
+                                        <ul>
+                                            <li ><a
+                                                    href="customer_information.html">
+                                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6.57347 7.70726C7.63231 7.70726 8.54906 7.3275 9.29832 6.57823C10.0473 5.82909 10.4272 4.91247 10.4272 3.85351C10.4272 2.79492 10.0475 1.87817 9.2982 1.12878C8.54893 0.37976 7.63219 0 6.57347 0C5.51452 0 4.59789 0.37976 3.84875 1.1289C3.0996 1.87805 2.71972 2.79479 2.71972 3.85351C2.71972 4.91247 3.0996 5.82921 3.84875 6.57836C4.59814 7.32738 5.51488 7.70726 6.57347 7.70726ZM4.51183 1.79187C5.08666 1.21704 5.76098 0.93762 6.57347 0.93762C7.38585 0.93762 8.06029 1.21704 8.63524 1.79187C9.21007 2.36682 9.48961 3.04125 9.48961 3.85351C9.48961 4.66601 9.21007 5.34032 8.63524 5.91527C8.06029 6.49022 7.38585 6.76964 6.57347 6.76964C5.76122 6.76964 5.0869 6.4901 4.51183 5.91527C3.93688 5.34044 3.65734 4.66601 3.65734 3.85351C3.65734 3.04125 3.93688 2.36682 4.51183 1.79187Z" fill="#575757"/>
+                                                        <path d="M13.3165 12.3032C13.2949 11.9914 13.2512 11.6513 13.1869 11.2922C13.1219 10.9304 13.0383 10.5884 12.9382 10.2757C12.8347 9.95262 12.6942 9.63353 12.5202 9.32774C12.3399 9.01036 12.128 8.73399 11.8902 8.50658C11.6416 8.26866 11.3371 8.07738 10.9851 7.93785C10.6343 7.79906 10.2455 7.72874 9.82957 7.72874C9.66624 7.72874 9.50828 7.79576 9.20323 7.99437C9.01549 8.11681 8.79588 8.25841 8.55077 8.41502C8.34117 8.54857 8.05724 8.67369 7.70653 8.78697C7.36437 8.89769 7.01695 8.95384 6.67394 8.95384C6.33116 8.95384 5.98375 8.89769 5.64135 8.78697C5.29101 8.67381 5.00695 8.54869 4.79772 8.41514C4.55492 8.25999 4.3352 8.11839 4.14465 7.99425C3.83984 7.79564 3.68188 7.72862 3.51855 7.72862C3.10253 7.72862 2.71386 7.79906 2.36315 7.93797C2.01135 8.07726 1.70678 8.26854 1.45788 8.5067C1.22009 8.73424 1.00818 9.01048 0.828001 9.32774C0.654296 9.63353 0.513671 9.9525 0.410155 10.2759C0.31018 10.5885 0.226562 10.9304 0.161621 11.2922C0.0971678 11.6509 0.0535888 11.9911 0.0319824 12.3036C0.0107422 12.6091 0 12.9271 0 13.2484C0 14.0836 0.265502 14.7597 0.789061 15.2584C1.30615 15.7505 1.99023 16 2.82238 16H10.5265C11.3584 16 12.0425 15.7505 12.5597 15.2584C13.0833 14.7601 13.3489 14.0837 13.3489 13.2483C13.3487 12.9259 13.3379 12.6079 13.3165 12.3032ZM11.9132 14.5791C11.5715 14.9043 11.1179 15.0623 10.5263 15.0623H2.82238C2.23071 15.0623 1.7771 14.9043 1.43554 14.5792C1.10046 14.2602 0.93762 13.8248 0.93762 13.2484C0.93762 12.9486 0.947508 12.6526 0.967283 12.3684C0.98657 12.0896 1.026 11.7833 1.08447 11.4579C1.14221 11.1365 1.2157 10.8348 1.3031 10.5617C1.38696 10.2999 1.50134 10.0406 1.64319 9.79087C1.77856 9.55284 1.93432 9.34861 2.1062 9.18406C2.26696 9.03013 2.4696 8.90416 2.70837 8.80968C2.92919 8.72227 3.17736 8.67442 3.44677 8.66722C3.47961 8.68468 3.53808 8.718 3.63281 8.77977C3.82555 8.90538 4.04772 9.04869 4.29333 9.20555C4.57018 9.38206 4.92687 9.54148 5.35302 9.67906C5.78869 9.81993 6.23302 9.89146 6.67406 9.89146C7.1151 9.89146 7.55956 9.81993 7.99498 9.67918C8.42149 9.54136 8.77806 9.38206 9.05528 9.2053C9.30662 9.04466 9.52256 8.9055 9.71531 8.77977C9.81004 8.71812 9.86851 8.68468 9.90135 8.66722C10.1709 8.67442 10.419 8.72227 10.64 8.80968C10.8786 8.90416 11.0813 9.03026 11.242 9.18406C11.4139 9.34849 11.5697 9.55272 11.7051 9.791C11.847 10.0406 11.9615 10.3 12.0453 10.5616C12.1328 10.8351 12.2064 11.1366 12.264 11.4577C12.3224 11.7838 12.3619 12.0902 12.3812 12.3685C12.4011 12.6516 12.4111 12.9477 12.4112 13.2484C12.4111 13.8249 12.2483 14.2602 11.9132 14.5791Z" fill="#575757"/>
+                                                        </svg>
+                                                         Account Information</a></li>
+                                            <li class=""><a href="update_profile.html">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.5019 1.94696L14.0521 0.496961C13.3896 -0.165506 12.3118 -0.165475 11.6493 0.496961C11.0256 1.12074 1.49887 10.6482 0.862214 11.2849C0.794402 11.3527 0.748965 11.4428 0.732777 11.531L0.00784107 15.446C-0.0202526 15.5977 0.0281223 15.7537 0.137278 15.8628C0.246559 15.9721 0.402497 16.0204 0.55409 15.9923L4.46874 15.2672C4.55921 15.2504 4.64814 15.2045 4.71483 15.1378L15.5019 4.34986C16.1659 3.68586 16.166 2.61105 15.5019 1.94696ZM1.05378 14.9462L1.49231 12.578L3.42187 14.5077L1.05378 14.9462ZM4.38339 14.1434L1.85656 11.6164L11.0819 2.39036L13.6087 4.91739L4.38339 14.1434ZM14.839 3.68695L14.2716 4.25449L11.7447 1.72746L12.3122 1.15993C12.6091 0.862991 13.0922 0.86296 13.3892 1.15993L14.839 2.60993C15.1367 2.90758 15.1367 3.38927 14.839 3.68695Z" fill="#575757"/>
+                                                    </svg>
+                                                    
+                                                Update profile</a></li>
+                                            <li><a href="orders.html">
+                                                <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.6787 13.1943L11.9641 4.19069C11.9196 3.61063 11.429 3.15622 10.8473 3.15622H9.43594V3.09278C9.43594 1.38741 8.04853 0 6.34315 0C4.63778 0 3.25037 1.38741 3.25037 3.09278V3.15622H1.83906C1.25728 3.15622 0.766685 3.61059 0.72231 4.18947L0.00756008 13.1955C-0.0477524 13.9166 0.202404 14.6345 0.693841 15.1651C1.18528 15.6957 1.88193 16 2.60515 16H10.0811C10.8043 16 11.501 15.6957 11.9925 15.1651C12.4839 14.6345 12.734 13.9166 12.6787 13.1943ZM4.18756 3.09278C4.18756 1.90419 5.15459 0.937187 6.34315 0.937187C7.53172 0.937187 8.49875 1.90422 8.49875 3.09278V3.15622H4.18756V3.09278ZM11.3049 14.5283C10.9856 14.873 10.551 15.0628 10.0811 15.0628H2.60519C2.13531 15.0628 1.70075 14.873 1.38144 14.5283C1.06215 14.1836 0.906091 13.7357 0.941966 13.2684L1.65665 4.26234C1.6639 4.16759 1.74403 4.09341 1.83906 4.09341H3.25037V5.24762C3.25037 5.50641 3.46018 5.71622 3.71897 5.71622C3.97775 5.71622 4.18756 5.50641 4.18756 5.24762V4.09341H8.49875V5.24762C8.49875 5.50641 8.70856 5.71622 8.96734 5.71622C9.22612 5.71622 9.43594 5.50641 9.43594 5.24762V4.09341H10.8473C10.9423 4.09341 11.0224 4.16762 11.0298 4.26359L11.7443 13.2672C11.7802 13.7357 11.6242 14.1835 11.3049 14.5283Z" fill="#575757"/>
+                                                    <path d="M8.45425 7.94641C8.27131 7.76341 7.97459 7.76341 7.79162 7.94641L5.69925 10.0388L4.89468 9.23422C4.71172 9.05122 4.415 9.05122 4.232 9.23422C4.049 9.41722 4.049 9.71391 4.232 9.89691L5.3679 11.0328C5.4594 11.1243 5.57934 11.1701 5.69922 11.1701C5.81909 11.1701 5.93906 11.1243 6.03053 11.0328L8.45422 8.60913C8.63725 8.42609 8.63725 8.12941 8.45425 7.94641Z" fill="#575757"/>
+                                                    </svg>
+                                                    
+                                                Orders</a></li>
+                                            <li><a href="address.html">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 0C2.691 0 0 2.691 0 6C0 10.159 5.416 15.623 5.646 15.854C5.744 15.951 5.872 16 6 16C6.128 16 6.256 15.951 6.354 15.854C6.584 15.623 12 10.159 12 6C12 2.691 9.309 0 6 0ZM6 14.777C4.806 13.499 1 9.177 1 6C1 3.243 3.243 1 6 1C8.757 1 11 3.243 11 6C11 9.174 7.194 13.499 6 14.777Z" fill="#575757"/>
+                                                    <path d="M6 3C4.346 3 3 4.346 3 6C3 7.654 4.346 9 6 9C7.654 9 9 7.654 9 6C9 4.346 7.654 3 6 3ZM6 8C4.897 8 4 7.103 4 6C4 4.897 4.897 4 6 4C7.103 4 8 4.897 8 6C8 7.103 7.103 8 6 8Z" fill="#575757"/>
+                                                    </svg>
+                                                    
+                                                Address</a></li>
+                                            <li class=""><a href="change_pasword.html">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10.6667 16H1.33333C0.598 16 0 15.402 0 14.6667V8C0 7.26467 0.598 6.66667 1.33333 6.66667H10.6667C11.402 6.66667 12 7.26467 12 8V14.6667C12 15.402 11.402 16 10.6667 16ZM1.33333 7.33333C0.965333 7.33333 0.666667 7.63267 0.666667 8V14.6667C0.666667 15.034 0.965333 15.3333 1.33333 15.3333H10.6667C11.0347 15.3333 11.3333 15.034 11.3333 14.6667V8C11.3333 7.63267 11.0347 7.33333 10.6667 7.33333H1.33333Z" fill="#575757"/>
+                                                    <path d="M9.66667 7.33333C9.48267 7.33333 9.33333 7.184 9.33333 7V4C9.33333 2.162 7.838 0.666667 6 0.666667C4.162 0.666667 2.66667 2.162 2.66667 4V7C2.66667 7.184 2.51733 7.33333 2.33333 7.33333C2.14933 7.33333 2 7.184 2 7V4C2 1.794 3.794 0 6 0C8.206 0 10 1.794 10 4V7C10 7.184 9.85067 7.33333 9.66667 7.33333Z" fill="#575757"/>
+                                                    </svg>
+                                                    
+                                                Change password</a></li>
+                                            <li class="active"><a href="become_seller.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.9293 11.0554C13.5945 11.0484 14.1762 10.5991 14.3469 9.9547L15.9874 3.84534C16.0397 3.64681 15.9247 3.44479 15.7262 3.38906C15.6948 3.38209 15.6635 3.37512 15.6321 3.37512H3.29153L2.4521 0.275165C2.4103 0.114942 2.26401 0 2.09683 0H0V0.7419H1.80425L2.61581 3.7722C2.61232 3.79658 2.61232 3.82096 2.61581 3.84534L4.2877 9.9756C4.29814 10.0244 4.31556 10.0766 4.33298 10.1254L4.89724 12.1804C4.35387 12.4695 3.98467 13.0407 3.98467 13.699C3.98467 14.6499 4.75443 15.4197 5.70532 15.4197C6.6562 15.4197 7.42597 14.6499 7.42597 13.699C7.42597 13.403 7.34934 13.1208 7.21698 12.877C7.18563 12.8213 7.15429 12.7656 7.11597 12.7098H11.4942C11.2992 12.9885 11.1807 13.3298 11.1807 13.699C11.1807 14.6499 11.9505 15.4197 12.9014 15.4197C13.8523 15.4197 14.6221 14.6499 14.6221 13.699C14.6221 13.2497 14.4514 12.8422 14.1692 12.5357C13.8662 12.1908 13.4204 11.9714 12.9223 11.9679H5.63914L5.37791 11.0101C5.48936 11.0379 5.60431 11.0554 5.71925 11.0554H12.9293ZM12.9049 12.7098C13.4517 12.7098 13.8941 13.1522 13.8941 13.699C13.8941 14.2459 13.4517 14.6882 12.9049 14.6882C12.358 14.6882 11.9157 14.2459 11.9157 13.699C11.9157 13.1522 12.358 12.7098 12.9049 12.7098ZM5.70532 12.7098C6.25216 12.7098 6.69103 13.1557 6.69103 13.699C6.69103 14.2459 6.24868 14.6882 5.70183 14.6882C5.15499 14.6882 4.71612 14.2459 4.71612 13.699C4.71612 13.1522 5.15847 12.7098 5.70532 12.7098ZM5.04353 9.84324L4.21107 6.79901L3.46917 4.12399H15.1341L13.6259 9.78751C13.5423 10.1114 13.2532 10.3378 12.9188 10.3448H5.71228C5.40925 10.3274 5.14454 10.1323 5.04353 9.84324Z" fill="#575757"/>
+                                                </svg>
+                                                 Become a Seller</a></li>
+                                            <li><a href="" style="border: none;">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7.75 15.5C3.475 15.5 0 12.025 0 7.75C0 5.4 1.05 3.225 2.85 1.725C3.075 1.55 3.375 1.575 3.55 1.8C3.725 2.025 3.7 2.325 3.475 2.5C1.9 3.8 1 5.7 1 7.75C1 11.475 4.025 14.5 7.75 14.5C11.475 14.5 14.5 11.475 14.5 7.75C14.5 5.7 13.6 3.8 12 2.525C11.775 2.35 11.75 2.025 11.925 1.825C12.1 1.6 12.425 1.575 12.625 1.75C14.45 3.225 15.5 5.4 15.5 7.75C15.5 12.025 12.025 15.5 7.75 15.5Z" fill="#575757"/>
+                                                    <path d="M7.75 8.25C7.475 8.25 7.25 8.025 7.25 7.75V0.5C7.25 0.225 7.475 0 7.75 0C8.025 0 8.25 0.225 8.25 0.5V7.75C8.25 8.025 8.025 8.25 7.75 8.25Z" fill="#575757"/>
+                                                    </svg>
+                                                    
+                                                Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="ps-section__right">
+                                <div class="ps-section--account-setting">
+                                    <div class="ps-section__header">
+                                        <h3>Become a seller </h3>
+                                    </div>
+                                    <div class="ps-section__content">
+                                        <div class="ps-form__content">
+                                            <div class="form-group">
+                                            <label for="shop_name" class="required">Shop Name</label>
+                                            <input id="shop_name" type="text" class="form-control" placeholder="Shop Name" name="" value="">
+                                            </div>
+                                            <div class="form-group ">
+                                            <label for="shop_url" class="required">Shop URL</label>
+                                            <input id="shop_url" type="url" class="form-control" placeholder="Shop URL" name="" value="">
+                                            </div>
+                                            <div class="form-group ">
+                                                <label for="phone_no" class="required">Phone Number</label>
+                                                <input id="phone_no" type="text" class="form-control" placeholder="Shop phone" name="" value="">
+                                                </div>
+                                  
+                                          
+                                            </div>
+                                            <button class="ps-btn">Register</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal for profile image change -->
+                    <div class="modal fade" id="avatar-modal" tabindex="-1" role="dialog"
+                        aria-labelledby="avatar-modal-label" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <form class="avatar-form" method="post"
+                                    action="" enctype="">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="avatar-modal-label"><i
+                                                class="til_img"></i><strong>Profile Image</strong></h4>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="avatar-body">
+
+                                            <div class="avatar-upload">
+                                                <input class="avatar-src" name="avatar_src" type="hidden">
+                                                <input class="avatar-data" name="avatar_data" type="hidden">
+                                                <input type="hidden" name="_token"
+                                                    value="">
+                                                <label for="avatarInput">New image</label>
+                                                <input class="avatar-input" id="avatarInput" name="avatar_file"
+                                                    type="file">
+                                            </div>
+                                            <div class="loading" tabindex="-1" role="img" aria-label="Loading"></div>
+
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="avatar-wrapper"></div>
+                                                    <div class="error-message text-danger" style="display: none"></div>
+                                                </div>
+                                                <div class="col-md-3 avatar-preview-wrapper">
+                                                    <div class="avatar-preview preview-lg"><img
+                                                            src="" alt="avatar"></div>
+                                                    <div class="avatar-preview preview-md"><img
+                                                            src="" alt="avatar"></div>
+                                                    <div class="avatar-preview preview-sm"><img
+                                                            src="" alt="avatar"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="ps-btn ps-btn--sm ps-btn--gray" type="button"
+                                            data-dismiss="modal">Close</button>
+                                        <button class="ps-btn ps-btn--sm avatar-save" type="submit">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <!-- news letter -->
+    <div>
+        <div class="ps-newsletter ">
+            <div class="ps-container newsletter-form">
+                <form method="post" action="" class="ps-form--newsletter"><input type="hidden" name="_token" value="">
+                    <div class="row">
+                        <div class="col-xl-5">
+                            <div class="ps-form__left">
+                                <h3>Join Our Newsletter Now</h3>
+                                <p>Subscribe to get information about products and coupons</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="ps-form__right"><input type="hidden" name="_token" value="">
+                                <div class="form-group--nest"><input name="email" type="email"
+                                        placeholder="Email address" class="form-control"> <button type="submit"
+                                        class="ps-btn">Subscribe</button></div>
+                                <div style="margin-top: 10px;"><input type="hidden" name="" id="" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <!-- footer -->
+        <div class="ps-container">
+            <div class="ps-footer__copyright ">
+                <p>Made w/ <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.9687 1.13187C11.2958 0.401985 10.3724 0 9.36845 0C8.61803 0 7.9308 0.237244 7.32579 0.705086C7.02051 0.941238 6.74389 1.23016 6.5 1.56738C6.25621 1.23026 5.97949 0.941238 5.67411 0.705086C5.0692 0.237244 4.38197 0 3.63155 0C2.62763 0 1.70415 0.401985 1.0312 1.13187C0.36628 1.85322 0 2.83869 0 3.90688C0 5.00632 0.409721 6.01272 1.28937 7.07417C2.07628 8.02364 3.20725 8.98749 4.51695 10.1036C4.96416 10.4847 5.47108 10.9168 5.99744 11.377C6.1365 11.4988 6.31493 11.5658 6.5 11.5658C6.68497 11.5658 6.8635 11.4988 7.00236 11.3772C7.52872 10.9169 8.03593 10.4846 8.48335 10.1033C9.79285 8.98739 10.9238 8.02364 11.7107 7.07407C12.5904 6.01272 13 5.00632 13 3.90678C13 2.83869 12.6337 1.85322 11.9687 1.13187Z"
+                            fill="#C1272D" />
+                    </svg>
+                    by Savior © 2022 Alhambra Marketplace. All Rights Reserved.</p>
+                <div class="footer-payments">
+                    <span class="payment-method-title">We Using Safe Payment For: </span>
+                    <p class="d-sm-inline-block d-block">
+                        <span><img src="../public/assets/img/user/payment-method-1.jpg"
+                                alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-2.png"
+                                alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-3.png"
+                                alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-4.png"
+                                alt="payment method"></span>
+                        <span><img src="../public/assets/img/user/payment-method-5.png"
+                                alt="payment method"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer end -->
+    <div id="back2top"><i class="icon icon-arrow-up"></i></div>
+    <div class="ps-site-overlay"></div>
+
+    <!--  -->
+    <!-- modal for product quickview -->
+
+
+    <!--script start -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="../public/assets/plugins/nouislider/nouislider.min.js"></script>
+    <script src="../public/assets/plugins/popper.min.js"></script>
+    <script src="../public/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../public/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../public/assets/plugins/jquery.matchHeight-min.js"></script>
+    <script src="../public/assets/plugins/slick/slick.min.js"></script>
+    <script src="../public/assets/plugins/jquery-bar-rating/jquery.barrating.min.js"></script>
+    <script src="../public/assets/plugins/slick-animation.min.js"></script>
+    <script src="../public/assets/plugins/lightGallery/js/lightgallery.min.js"></script>
+    <script src="../public/assets/plugins/sticky-sidebar/sticky-sidebar.min.js"></script>
+    <script src="../public/assets/plugins/select2/js/select2.min.js"></script>
+    <script src="../public/assets/js/user/main.js"></script>
+    <script src="../public/assets/js/user/backend.js"></script>
+    <script src="../public/assets/js/user/parsley.min.js"></script>
+
+
+    <script src="../public/assets/js/user/change-product-swatches.js"></script>
+    <script src="../public/assets/js/user/cookie-consent.js"></script>
+    <script src="../public/assets/js/user/owl.carousel.js"></script>
+    <script src="../public/assets/js/user/simple-slider.js"></script>
+
+    <script src="../public/assets/js/user/app.js"></script>
+    <script src="../public/assets/js/user/customer.js"></script>
+    <script src="../public/assets/js/user/avatar.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="../public/assets/js/user/card.js"></script>
+
+    <script src="../public/assets/js/user/payment.js"></script>
+    <script src="../public/assets/js/user/checkout.js"></script>
+    <!-- <script src="public/assets/js/admin/parsley.min.js"></script> -->
+
+    <!-- script end -->
+
+</body>
+
+</html>
